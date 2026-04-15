@@ -22,7 +22,7 @@ export default function Footer() {
         <div>
           <div className="logo-img relative w-10 h-10 overflow-hidden mb-3">
             <Image
-              src="/logo.png"
+              src="/logo.jpg"
               alt="Idle Hands"
               fill
               className="object-cover"

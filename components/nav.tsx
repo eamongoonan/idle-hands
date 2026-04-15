@@ -23,7 +23,7 @@ export default function Nav() {
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <div className="logo-img relative w-9 h-9 overflow-hidden shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo.jpg"
               alt="Idle Hands"
               fill
               className="object-cover"
