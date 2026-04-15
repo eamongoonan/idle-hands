@@ -45,17 +45,6 @@
     line-height: 1.2;
   }
 
-  /* Grayscale images that lift to colour on hover */
-  img {
-    filter: grayscale(100%);
-    transition: filter 0.5s ease;
-  }
-
-  .group:hover img,
-  img:hover {
-    filter: grayscale(0%);
-  }
-
   /* All borders use the subtle palette colour */
   *,
   *::before,
@@ -76,6 +65,22 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--chalk);
+  }
+
+  /* Portfolio / piece images — desaturated by default, lift on hover */
+  .piece-img-wrap img {
+    filter: grayscale(70%) brightness(0.75) contrast(1.1);
+    transition: filter 0.5s ease, transform 0.5s ease;
+  }
+
+  .piece-img-wrap:hover img {
+    filter: grayscale(20%) brightness(0.9);
+  }
+
+  /* Logo images — fully desaturated at reduced brightness */
+  .logo-img img {
+    filter: grayscale(100%) brightness(0.55);
+    transition: filter 0.4s ease;
   }
 
   .copper-rule {
