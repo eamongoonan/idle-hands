@@ -67,14 +67,14 @@
     color: var(--chalk);
   }
 
-  /* Portfolio / piece images — desaturated by default, lift on hover */
+  /* Portfolio / piece images — slight dimming at rest, full colour on hover */
   .piece-img-wrap img {
-    filter: grayscale(70%) brightness(0.75) contrast(1.1);
+    filter: brightness(0.82);
     transition: filter 0.5s ease, transform 0.5s ease;
   }
 
   .piece-img-wrap:hover img {
-    filter: grayscale(20%) brightness(0.9);
+    filter: brightness(1);
   }
 
   /* Logo image — transparent PNG, no filter needed */

@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Piece } from '@/sanity/lib/queries'
@@ -7,10 +10,47 @@ interface Props {
   readonly pieces: Piece[]
 }
 
+const CARD_WIDTH = 300
+const GAP = 1
+const CARD_STEP = CARD_WIDTH + GAP
+const PAUSE_MS = 3500
+const TRANSITION_MS = 700
+
 export function PieceCarousel({ pieces }: Readonly<Props>) {
+  const trackRef = useRef<HTMLDivElement>(null)
+  const indexRef = useRef(0)
+
+  useEffect(() => {
+    const el = trackRef.current
+    if (!el || pieces.length === 0) return
+
+    const advance = () => {
+      const next = indexRef.current + 1
+
+      // Animate to next position (may be in the duplicate set — that's fine)
+      el.style.transition = `transform ${TRANSITION_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`
+      el.style.transform = `translateX(-${next * CARD_STEP}px)`
+      indexRef.current = next
+
+      // After the transition, silently snap back to the equivalent position in the
+      // original set so the loop is seamless
+      if (next >= pieces.length) {
+        setTimeout(() => {
+          el.style.transition = 'none'
+          el.style.transform = 'translateX(0)'
+          indexRef.current = 0
+          el.getBoundingClientRect() // force reflow before next transition
+        }, TRANSITION_MS)
+      }
+    }
+
+    const id = setInterval(advance, PAUSE_MS)
+    return () => clearInterval(id)
+  }, [pieces.length])
+
   if (pieces.length === 0) return null
 
-  // Duplicate for seamless infinite loop
+  // Duplicate the list so the seamless snap-back is invisible
   const track = [...pieces, ...pieces]
 
   return (
@@ -19,8 +59,9 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
       style={{ borderBottom: '1px solid var(--border)' }}
     >
       <div
-        className="carousel-track"
-        style={{ backgroundColor: 'var(--border)' }}
+        ref={trackRef}
+        className="flex"
+        style={{ gap: `${GAP}px`, backgroundColor: 'var(--border)' }}
       >
         {track.map((piece, i) => {
           const imageUrl = piece.mainImage
@@ -32,13 +73,13 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
               key={`${piece._id}-${i}`}
               href={`/portfolio/${piece.slug.current}`}
               className="group shrink-0 block"
-              style={{ width: '300px' }}
+              style={{ width: `${CARD_WIDTH}px` }}
             >
               <div
                 className="piece-img-wrap relative overflow-hidden"
                 style={{
-                  width: '300px',
-                  height: '300px',
+                  width: `${CARD_WIDTH}px`,
+                  height: `${CARD_WIDTH}px`,
                   backgroundColor: 'var(--iron)',
                 }}
               >
@@ -58,6 +99,17 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
                         'linear-gradient(135deg, var(--iron), var(--soot))',
                     }}
                   />
+                )}
+
+                {piece.available && (
+                  <div
+                    className="absolute top-3 right-3 px-2.5 py-1"
+                    style={{ backgroundColor: 'var(--accent)' }}
+                  >
+                    <span className="font-cinzel text-xs tracking-widest uppercase text-white">
+                      Available
+                    </span>
+                  </div>
                 )}
               </div>
               <div
