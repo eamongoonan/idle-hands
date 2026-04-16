@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'About Paddy — self-taught metalworker based in Dublin, making bespoke jewellery and metal engravings.',
+    'About Paddy — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
 }
 
 export default function AboutPage() {
@@ -23,13 +23,14 @@ export default function AboutPage() {
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               Paddy is a metalworker based in Dublin, Ireland. His practice spans
-              handmade jewellery in silver and gold, and precision engravings
-              worked into copper.
+              handmade jewellery — wrought in silver and gold, set with diamonds
+              and precious stones — and precision engravings worked into copper.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
-              The work is intentionally spare. No decoration for decoration&apos;s
-              sake. Every mark and every finish is considered. The materials
-              speak without embellishment.
+              The copper work continues a family tradition: his grandfather was
+              an engraver, and that thread runs through everything Paddy makes.
+              The work is intentionally spare — every mark and every finish
+              considered, the materials speaking without embellishment.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-10">
               Commissions are accepted on a rolling basis. The enquiry process
@@ -71,11 +72,11 @@ export default function AboutPage() {
             {[
               {
                 title: '3D Jewelry',
-                desc: 'Rings, bands, and wearable pieces made by hand in silver and gold. Stones — diamonds, precious, and semi-precious gems — set to order. Each piece is formed without casting or moulding; the marks of the process remain in the metal.',
+                desc: 'Rings, bands, and wearable pieces wrought in silver and gold. Diamonds and precious or semi-precious stones set to order. Each piece is formed by hand — the marks of the process remain in the metal.',
               },
               {
                 title: '2D Engraving',
-                desc: 'Precision line work engraved directly into copper and metal sheet. Portraits, lettering, abstract patterns, and custom designs. The depth and texture of the line work is built up over many passes with hand tools.',
+                desc: 'Precision line work engraved directly into copper — a craft Paddy inherited from his grandfather. Portraits, lettering, abstract patterns, and custom designs built up over many passes with hand tools.',
               },
             ].map(({ title, desc }) => (
               <div

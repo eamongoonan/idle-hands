@@ -105,12 +105,12 @@ export default async function HomePage() {
           <h2 className="section-heading mb-6">About Paddy</h2>
           <p className="font-crimson text-stone text-lg leading-relaxed mb-4">
             Paddy is a metalworker based in Dublin. He makes jewellery in silver
-            and gold — rings, bands, and wearable pieces — alongside copper
-            engravings worked by hand.
+            and gold — set with diamonds and precious stones — alongside copper
+            engravings that continue a family tradition reaching back to his
+            grandfather.
           </p>
           <p className="font-crimson text-stone text-lg leading-relaxed mb-8">
-            The work is deliberate and unhurried. Material, form, and finish
-            are considered at every stage. No two pieces are the same.
+            The work is deliberate and unhurried. No two pieces are the same.
           </p>
           <Link
             href="/about"
