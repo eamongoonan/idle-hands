@@ -81,11 +81,11 @@ export default function AboutPage() {
           >
             {[
               {
-                title: '3D Jewelry',
+                title: '3D Pieces',
                 desc: 'Rings, bands, and wearable pieces wrought in silver and gold. Diamonds and precious or semi-precious stones set to order. Each piece is formed by hand — the marks of the process remain in the metal.',
               },
               {
-                title: '2D Engraving',
+                title: '2D Pieces',
                 desc: 'Precision line work engraved directly into copper — a craft Patrick inherited from his grandfather. Portraits, lettering, abstract patterns, and custom designs built up over many passes with hand tools.',
               },
             ].map(({ title, desc }) => (

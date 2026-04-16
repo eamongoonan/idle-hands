@@ -43,7 +43,7 @@ export default async function PiecePage({ params }: Props) {
     ? urlFor(piece.mainImage).width(1200).height(1200).url()
     : (piece.localImage ?? null)
 
-  const categoryLabel = piece.category === '2d' ? '2D Engraving' : '3D Piece'
+  const categoryLabel = piece.category === '2d' ? '2D Piece' : '3D Piece'
 
   return (
     <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-4 sm:px-8">

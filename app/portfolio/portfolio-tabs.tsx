@@ -7,7 +7,7 @@ import { PortfolioGrid } from '@/components/ui/portfolio-grid'
 const TABS = [
   { value: 'all', label: 'All Work' },
   { value: '3d', label: '3D Pieces' },
-  { value: '2d', label: '2D Engravings' },
+  { value: '2d', label: '2D Pieces' },
 ] as const
 
 type Tab = (typeof TABS)[number]['value']

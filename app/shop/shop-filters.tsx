@@ -8,7 +8,7 @@ import { PortfolioGrid } from '@/components/ui/portfolio-grid'
 const FILTERS = [
   { value: 'all', label: 'All' },
   { value: '3d', label: '3D Pieces' },
-  { value: '2d', label: '2D Engravings' },
+  { value: '2d', label: '2D Pieces' },
 ] as const
 
 type Filter = (typeof FILTERS)[number]['value']
