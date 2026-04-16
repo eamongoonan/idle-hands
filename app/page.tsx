@@ -73,24 +73,6 @@ export default async function HomePage() {
           className="grid md:grid-cols-2 gap-px"
           style={{ backgroundColor: 'var(--border)' }}
         >
-          <div className="px-4 sm:px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--deep)' }}>
-            <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
-            <p className="font-crimson italic text-ash mb-2 text-base">Ready to ship</p>
-            <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
-              Available Pieces
-            </h2>
-            <p className="font-crimson text-stone text-lg leading-relaxed mb-8 max-w-sm">
-              A selection of finished pieces — ready to purchase with no wait.
-              Each one is unique and will not be remade.
-            </p>
-            <Link
-              href="/shop"
-              className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
-            >
-              Browse Available Pieces →
-            </Link>
-          </div>
-
           <div className="px-4 sm:px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--iron)' }}>
             <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
             <p className="font-crimson italic text-ash mb-2 text-base">Made to order</p>
@@ -106,6 +88,24 @@ export default async function HomePage() {
               className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
             >
               Make an Enquiry →
+            </Link>
+          </div>
+
+          <div className="px-4 sm:px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--deep)' }}>
+            <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
+            <p className="font-crimson italic text-ash mb-2 text-base">Ready to ship</p>
+            <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
+              Available Pieces
+            </h2>
+            <p className="font-crimson text-stone text-lg leading-relaxed mb-8 max-w-sm">
+              A selection of finished pieces — ready to purchase with no wait.
+              Each one is unique and will not be remade.
+            </p>
+            <Link
+              href="/shop"
+              className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+            >
+              Browse Available Pieces →
             </Link>
           </div>
         </div>
