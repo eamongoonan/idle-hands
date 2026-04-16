@@ -115,7 +115,7 @@ export default async function HomePage() {
       <section className="py-16 md:py-28 px-4 sm:px-8">
         <div className="max-w-2xl mx-auto">
           <p className="font-crimson italic text-ash mb-2 text-base">The maker</p>
-          <h2 className="section-heading mb-6">About Patrick</h2>
+          <h2 className="section-heading mb-6">About Patrick Watts</h2>
           <p className="font-crimson text-stone text-lg leading-relaxed mb-4">
             Patrick Watts is a metalworker based in Dublin. He makes jewellery in silver
             and gold — set with diamonds and precious stones — alongside copper

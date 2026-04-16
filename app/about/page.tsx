@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'About Patrick — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+    'About Patrick Watts — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
   openGraph: {
     title: 'About | Idle Hands',
     description:
-      'About Patrick — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+      'About Patrick Watts — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
     url: 'https://idle-hands-chi.vercel.app/about',
   },
 }
@@ -20,7 +20,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="mb-10 md:mb-20">
           <p className="font-crimson italic text-ash mb-2">The maker</p>
-          <h1 className="section-heading mb-3">About Patrick</h1>
+          <h1 className="section-heading mb-3">About Patrick Watts</h1>
           <div className="w-16 h-px" style={{ backgroundColor: 'var(--accent)' }} />
         </div>
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16 md:mb-28">
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
-              Patrick is a metalworker based in Dublin, Ireland. His practice spans
+              Patrick Watts is a metalworker based in Dublin, Ireland. His practice spans
               handmade jewellery — wrought in silver and gold, set with diamonds
               and precious stones — and precision engravings worked into copper.
             </p>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 flex items-end p-8">
               <p className="font-crimson italic text-ash text-sm">
-                Patrick at work · Dublin
+                Patrick Watts at work · Dublin
               </p>
             </div>
           </div>
