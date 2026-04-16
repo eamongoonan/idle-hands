@@ -14,7 +14,7 @@ function typeLabel(type: string | undefined) {
     case '3d':
       return '3D Piece'
     case '2d':
-      return '2D Engraving'
+      return '2D Piece'
     default:
       return 'General'
   }
@@ -93,6 +93,33 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     })
+
+    // Confirmation email to the customer — fire and forget, don't fail the request if it errors
+    resend.emails.send({
+      from: 'Idle Hands <noreply@idlehands.ie>',
+      to: email,
+      subject: 'Your enquiry has been received — Idle Hands',
+      html: `
+        <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
+          <div style="border-bottom: 2px solid #b5651d; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+            <h2 style="margin: 0; font-size: 1.1rem; color: #111; letter-spacing: 0.05em;">
+              Idle Hands
+            </h2>
+          </div>
+          <p style="margin: 0 0 1rem;">Hi ${name},</p>
+          <p style="margin: 0 0 1rem;">
+            Thank you for getting in touch. Your enquiry has been received and Patrick will be in touch within 48 hours.
+          </p>
+          <p style="margin: 0 0 1.5rem;">
+            In the meantime, you can browse the full portfolio at
+            <a href="https://idlehands.ie/portfolio" style="color: #b5651d;">idlehands.ie/portfolio</a>.
+          </p>
+          <div style="border-top: 1px solid #eee; padding-top: 1.5rem; font-size: 0.85rem; color: #999;">
+            <p style="margin: 0;">Idle Hands · Dublin · handmade metalwork &amp; jewellery</p>
+          </div>
+        </div>
+      `,
+    }).catch(() => {/* non-critical */})
 
     return NextResponse.json({ success: true })
   } catch (err) {
