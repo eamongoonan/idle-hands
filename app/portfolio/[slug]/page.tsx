@@ -135,17 +135,25 @@ export default async function PiecePage({ params }: Props) {
               style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
             >
               <dl className="flex flex-col gap-3">
-                <div className="flex justify-between">
-                  <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Type</dt>
-                  <dd className="font-crimson italic text-chalk text-sm">{categoryLabel}</dd>
-                </div>
                 {piece.material && (
                   <div className="flex justify-between">
                     <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Material</dt>
                     <dd className="font-crimson italic text-chalk text-sm">{piece.material}</dd>
                   </div>
                 )}
-{piece.price && (
+                {piece.category === '3d' && piece.size && (
+                  <div className="flex justify-between">
+                    <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Size</dt>
+                    <dd className="font-crimson italic text-chalk text-sm">{piece.size}</dd>
+                  </div>
+                )}
+                {piece.category === '2d' && piece.dimensions && (
+                  <div className="flex justify-between">
+                    <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Dimensions</dt>
+                    <dd className="font-crimson italic text-chalk text-sm">{piece.dimensions}</dd>
+                  </div>
+                )}
+                {piece.price && (
                   <div className="flex justify-between">
                     <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Price</dt>
                     <dd className="font-crimson text-accent text-base">

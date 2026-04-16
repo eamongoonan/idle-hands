@@ -6,6 +6,8 @@ export type Piece = {
   slug: { current: string }
   category: '2d' | '3d'
   material?: string
+  size?: string
+  dimensions?: string
   price?: number
   available: boolean
   mainImage?: {
@@ -23,6 +25,8 @@ const PIECE_FIELDS = `
   slug,
   category,
   material,
+  size,
+  dimensions,
   price,
   available,
   mainImage { asset, alt },

@@ -36,6 +36,20 @@ const piece = {
       description: 'e.g. Mild steel, Copper, Brass',
     },
     {
+      name: 'size',
+      title: 'Size',
+      type: 'string',
+      description: 'e.g. Ring size N, 52mm diameter. For batch pieces list available sizes.',
+      hidden: ({ document }: { document?: { category?: string } }) => document?.category !== '3d',
+    },
+    {
+      name: 'dimensions',
+      title: 'Dimensions',
+      type: 'string',
+      description: 'e.g. 200 × 150mm',
+      hidden: ({ document }: { document?: { category?: string } }) => document?.category !== '2d',
+    },
+    {
       name: 'price',
       title: 'Price (€)',
       type: 'number',
