@@ -25,7 +25,7 @@ export default async function ShopPage() {
             style={{ backgroundColor: 'var(--accent)' }}
           />
           <p className="font-crimson text-stone text-lg max-w-xl leading-relaxed">
-            Each piece is one of a kind. Once sold, it's gone. Shipping available
+            Each piece is one of a kind. Once sold, it&apos;s gone. Shipping available
             within Ireland and to select EU countries. Enquire for details.
           </p>
         </div>

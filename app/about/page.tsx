@@ -28,7 +28,7 @@ export default function AboutPage() {
               precision engravings worked into copper.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
-              The work is intentionally spare. No decoration for decoration's
+              The work is intentionally spare. No decoration for decoration&apos;s
               sake. Every mark and every finish is considered. The materials
               speak without embellishment.
             </p>

@@ -60,7 +60,7 @@ export default function EnquirePage() {
           </p>
           <h1 className="section-heading mb-6">Enquiry Received</h1>
           <p className="font-crimson text-stone text-lg">
-            I'll be in touch within 48 hours.
+            I&apos;ll be in touch within 48 hours.
           </p>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function EnquirePage() {
         />
         <p className="font-crimson text-stone text-lg mb-14 leading-relaxed">
           All commissions and purchase enquiries go through this form. Fill in
-          as much detail as you can — I'll respond within 48 hours.
+          as much detail as you can — I&apos;ll respond within 48 hours.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-10">
