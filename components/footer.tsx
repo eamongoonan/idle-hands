@@ -80,7 +80,7 @@ export default function Footer() {
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <p className="font-crimson text-ash text-xs">
-          © {new Date().getFullYear()} Idle Hands
+          © 2024 Idle Hands
         </p>
       </div>
     </footer>

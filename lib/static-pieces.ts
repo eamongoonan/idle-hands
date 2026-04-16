@@ -15,6 +15,7 @@ export const STATIC_PIECES: Piece[] = [
     price: 180,
     localImage: '/images/2D-01.png',
     description: 'Copper relief plate with abstract organic forms.',
+    dimensions: '22 × 16 cm',
   },
   {
     _id: 'static-3d-04',
@@ -26,6 +27,7 @@ export const STATIC_PIECES: Piece[] = [
     price: 280,
     localImage: '/images/3D-04.png',
     description: 'Wide hammered silver ring worn on fist.',
+    size: 'Sizes J–T (EU 49–62) available to order',
   },
   {
     _id: 'static-2d-02',
@@ -36,6 +38,7 @@ export const STATIC_PIECES: Piece[] = [
     available: false,
     localImage: '/images/2D-02.png',
     description: 'Copper relief plate featuring a menorah with cityscape.',
+    dimensions: '28 × 20 cm',
   },
   {
     _id: 'static-3d-02',
@@ -46,6 +49,7 @@ export const STATIC_PIECES: Piece[] = [
     available: false,
     localImage: '/images/3D-02.png',
     description: 'Silver chain weave ring.',
+    size: 'Sizes J–T (EU 49–62) available to order',
   },
   {
     _id: 'static-2d-03',
@@ -56,6 +60,7 @@ export const STATIC_PIECES: Piece[] = [
     available: false,
     localImage: '/images/2D-03.png',
     description: 'Copper plate with "Dublin Modular" text engraving.',
+    dimensions: '18 × 12 cm',
   },
   {
     _id: 'static-3d-01',
@@ -66,6 +71,7 @@ export const STATIC_PIECES: Piece[] = [
     available: false,
     localImage: '/images/3D-01.png',
     description: 'Silver chain weave ring, close-up on hand.',
+    size: 'Sizes J–T (EU 49–62) available to order',
   },
   {
     _id: 'static-3d-03',
@@ -77,16 +83,18 @@ export const STATIC_PIECES: Piece[] = [
     price: 240,
     localImage: '/images/3D-03.png',
     description: 'Two aluminium open cuffs on wooden anvil block.',
+    size: 'S / M / L — inner circumference 155–185 mm, adjustable',
   },
   {
     _id: 'static-2d-05',
     title: 'Hammered Wide Band II',
     slug: { current: 'hammered-wide-band-ii' },
     category: '2d',
-    material: 'Silver',
+    material: 'Copper',
     available: false,
     localImage: '/images/2D-05.png',
-    description: 'Wide hammered silver ring, close-up on fist.',
+    description: 'Copper engraved plate.',
+    dimensions: '30 × 22 cm',
   },
 ]
 
