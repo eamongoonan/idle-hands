@@ -26,7 +26,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bio + portrait placeholder */}
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16 md:mb-28">
+        <div className="grid md:grid-cols-[3fr_2fr] gap-10 md:gap-16 items-center mb-16 md:mb-28">
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               Patrick Watts is a metalworker based in Dublin, Ireland. His practice spans
@@ -51,7 +51,7 @@ export default function AboutPage() {
 
           {/* Portrait */}
           <div
-            className="piece-img-wrap relative aspect-[3/4] overflow-hidden"
+            className="piece-img-wrap relative aspect-square overflow-hidden"
             style={{ border: '1px solid var(--border)' }}
           >
             <Image
