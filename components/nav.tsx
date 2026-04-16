@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import MobileMenu from './mobile-menu'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -52,6 +53,9 @@ export default function Nav() {
             </Link>
           ))}
         </nav>
+
+        {/* Mobile menu */}
+        <MobileMenu />
       </div>
     </header>
   )
