@@ -47,7 +47,7 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
-              className="font-cinzel text-xs tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200"
+              className="font-cinzel text-sm tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200"
             >
               {label}
             </Link>

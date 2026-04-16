@@ -59,7 +59,7 @@ export default function MobileMenu() {
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className="font-cinzel text-[0.7rem] tracking-[0.22em] uppercase text-stone hover:text-chalk transition-colors duration-200 px-8 py-4"
+              className="font-cinzel text-sm tracking-[0.22em] uppercase text-stone hover:text-chalk transition-colors duration-200 px-8 py-4"
               style={{ borderBottom: '1px solid var(--border)' }}
             >
               {label}

@@ -28,7 +28,7 @@ export default function ShopFilters({ pieces }: { pieces: Piece[] }) {
             <button
               key={f.value}
               onClick={() => setActive(f.value)}
-              className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase px-5 py-2.5 transition-all duration-200"
+              className="font-cinzel text-sm tracking-[0.18em] uppercase px-5 py-2.5 transition-all duration-200"
               style={{
                 backgroundColor: isActive ? 'var(--accent)' : 'transparent',
                 color: isActive ? 'var(--white)' : 'var(--stone)',

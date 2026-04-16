@@ -27,7 +27,7 @@
     background-color: var(--black);
     color: var(--bone);
     font-family: var(--font-crimson), Georgia, serif;
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -61,7 +61,7 @@
 @layer components {
   .section-heading {
     font-family: var(--font-cinzel), Georgia, serif;
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--chalk);

@@ -208,3 +208,4 @@ The site uses a dark industrial palette defined as CSS custom properties in `glo
 **Image treatment:** portfolio images use `grayscale(70%) brightness(0.75) contrast(1.1)` at rest, lifting to `grayscale(20%) brightness(0.9)` on hover. Apply the `piece-img-wrap` class to any container to get this behaviour. The logo uses `grayscale(100%) brightness(0.55)` via the `logo-img` class.
 
 No rounded corners anywhere — `borderRadius` is overridden to `0` in `tailwind.config.ts`.
+

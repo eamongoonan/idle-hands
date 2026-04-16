@@ -55,7 +55,7 @@ export default function EnquirePage() {
             className="w-12 h-px mx-auto mb-8"
             style={{ backgroundColor: 'var(--accent)' }}
           />
-          <p className="font-cinzel text-[0.65rem] tracking-[0.3em] uppercase text-accent mb-4">
+          <p className="font-cinzel text-sm tracking-[0.3em] uppercase text-accent mb-4">
             Thank you
           </p>
           <h1 className="section-heading mb-6">Enquiry Received</h1>
@@ -85,7 +85,7 @@ export default function EnquirePage() {
         <form onSubmit={handleSubmit} className="space-y-10">
           {/* Enquiry type */}
           <fieldset>
-            <legend className="font-cinzel text-[0.65rem] tracking-[0.2em] uppercase text-chalk mb-5 block">
+            <legend className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk mb-5 block">
               Enquiry Type
             </legend>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -114,11 +114,11 @@ export default function EnquirePage() {
                         onChange={() => set('type', value)}
                         className="accent-accent"
                       />
-                      <span className="font-cinzel text-[0.65rem] tracking-[0.15em] uppercase text-chalk">
+                      <span className="font-cinzel text-sm tracking-[0.15em] uppercase text-chalk">
                         {label}
                       </span>
                     </div>
-                    <p className="font-crimson italic text-ash text-xs pl-4">
+                    <p className="font-crimson italic text-ash text-sm pl-4">
                       {hint}
                     </p>
                   </label>
@@ -130,7 +130,7 @@ export default function EnquirePage() {
           {/* Name + Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="font-cinzel text-[0.65rem] tracking-[0.2em] uppercase text-chalk block mb-2">
+              <label className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk block mb-2">
                 Name <span style={{ color: 'var(--accent)' }}>*</span>
               </label>
               <input
@@ -153,7 +153,7 @@ export default function EnquirePage() {
               />
             </div>
             <div>
-              <label className="font-cinzel text-[0.65rem] tracking-[0.2em] uppercase text-chalk block mb-2">
+              <label className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk block mb-2">
                 Email <span style={{ color: 'var(--accent)' }}>*</span>
               </label>
               <input
@@ -179,9 +179,9 @@ export default function EnquirePage() {
 
           {/* Budget */}
           <div>
-            <label className="font-cinzel text-[0.65rem] tracking-[0.2em] uppercase text-chalk block mb-2">
+            <label className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk block mb-2">
               Budget{' '}
-              <span className="font-crimson italic normal-case tracking-normal text-ash text-xs">
+              <span className="font-crimson italic normal-case tracking-normal text-ash text-sm">
                 (optional)
               </span>
             </label>
@@ -206,7 +206,7 @@ export default function EnquirePage() {
 
           {/* Message */}
           <div>
-            <label className="font-cinzel text-[0.65rem] tracking-[0.2em] uppercase text-chalk block mb-2">
+            <label className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk block mb-2">
               Message <span style={{ color: 'var(--accent)' }}>*</span>
             </label>
             <textarea

@@ -17,12 +17,12 @@ export default async function HomePage() {
         style={{ borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-7xl mx-auto px-8 flex items-end justify-between py-8">
-          <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-ash">
+          <p className="font-cinzel text-sm tracking-[0.2em] uppercase text-ash">
             Selected Work
           </p>
           <Link
             href="/portfolio"
-            className="font-cinzel text-xs tracking-[0.18em] uppercase text-stone hover:text-accent transition-colors duration-200"
+            className="font-cinzel text-sm tracking-[0.18em] uppercase text-stone hover:text-accent transition-colors duration-200"
           >
             View All →
           </Link>
@@ -72,7 +72,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/shop"
-              className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+              className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
             >
               Browse Available Pieces →
             </Link>
@@ -90,7 +90,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/enquire"
-              className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+              className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
             >
               Make an Enquiry →
             </Link>
@@ -114,7 +114,7 @@ export default async function HomePage() {
           </p>
           <Link
             href="/about"
-            className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+            className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
           >
             Read More →
           </Link>

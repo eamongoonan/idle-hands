@@ -46,7 +46,7 @@ export default async function PiecePage({ params }: Props) {
         {/* Back link */}
         <Link
           href="/portfolio"
-          className="inline-flex items-center gap-2 font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200 mb-14"
+          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200 mb-14"
         >
           ← All Work
         </Link>
@@ -130,22 +130,22 @@ export default async function PiecePage({ params }: Props) {
             >
               <dl className="flex flex-col gap-3">
                 <div className="flex justify-between">
-                  <dt className="font-cinzel text-[0.65rem] tracking-widest uppercase text-ash">Type</dt>
+                  <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Type</dt>
                   <dd className="font-crimson italic text-chalk text-sm">{categoryLabel}</dd>
                 </div>
                 {piece.material && (
                   <div className="flex justify-between">
-                    <dt className="font-cinzel text-[0.65rem] tracking-widest uppercase text-ash">Material</dt>
+                    <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Material</dt>
                     <dd className="font-crimson italic text-chalk text-sm">{piece.material}</dd>
                   </div>
                 )}
                 <div className="flex justify-between">
-                  <dt className="font-cinzel text-[0.65rem] tracking-widest uppercase text-ash">Origin</dt>
+                  <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Origin</dt>
                   <dd className="font-crimson italic text-chalk text-sm">Dublin, Ireland</dd>
                 </div>
                 {piece.price && (
                   <div className="flex justify-between">
-                    <dt className="font-cinzel text-[0.65rem] tracking-widest uppercase text-ash">Price</dt>
+                    <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Price</dt>
                     <dd className="font-crimson text-accent text-base">
                       €{piece.price.toLocaleString('en-IE')}
                     </dd>

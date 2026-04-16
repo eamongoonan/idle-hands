@@ -32,13 +32,13 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
               key={`${piece._id}-${i}`}
               href={`/portfolio/${piece.slug.current}`}
               className="group shrink-0 block"
-              style={{ width: '260px' }}
+              style={{ width: '300px' }}
             >
               <div
                 className="piece-img-wrap relative overflow-hidden"
                 style={{
-                  width: '260px',
-                  height: '260px',
+                  width: '300px',
+                  height: '300px',
                   backgroundColor: 'var(--iron)',
                 }}
               >
@@ -48,7 +48,7 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
                     alt={piece.mainImage?.alt ?? piece.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="260px"
+                    sizes="300px"
                   />
                 ) : (
                   <div
@@ -61,15 +61,15 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
                 )}
               </div>
               <div
-                className="px-4 pt-3 pb-4"
+                className="px-4 pt-3 pb-5"
                 style={{ backgroundColor: 'var(--deep)' }}
               >
-                <p className="font-cinzel text-[0.6rem] tracking-widest uppercase text-chalk truncate">
-                  {piece.title}
-                </p>
-                <p className="font-crimson italic text-ash text-xs mt-0.5">
-                  {piece.category === '2d' ? '2D Engraving' : '3D Piece'}
+                <p className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent mb-1">
+                  {piece.category === '2d' ? '2D' : '3D'}
                   {piece.material ? ` · ${piece.material}` : ''}
+                </p>
+                <p className="font-cinzel text-sm tracking-wider uppercase text-chalk truncate">
+                  {piece.title}
                 </p>
               </div>
             </Link>

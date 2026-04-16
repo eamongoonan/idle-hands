@@ -37,7 +37,7 @@ export function PieceCard({ piece }: Readonly<PieceCardProps>) {
               background: 'linear-gradient(135deg, var(--iron), var(--soot))',
             }}
           >
-            <span className="font-cinzel text-[0.6rem] tracking-widest text-ash uppercase">
+            <span className="font-cinzel text-xs tracking-widest text-ash uppercase">
               No Image
             </span>
           </div>
@@ -49,7 +49,7 @@ export function PieceCard({ piece }: Readonly<PieceCardProps>) {
             className="absolute top-3 right-3 px-2.5 py-1"
             style={{ backgroundColor: 'var(--accent)' }}
           >
-            <span className="font-cinzel text-[0.6rem] tracking-widest uppercase text-white">
+            <span className="font-cinzel text-xs tracking-widest uppercase text-white">
               Available
             </span>
           </div>
@@ -58,11 +58,11 @@ export function PieceCard({ piece }: Readonly<PieceCardProps>) {
 
       {/* Meta */}
       <div className="pb-7">
-        <p className="font-crimson italic text-ash text-sm mb-1 capitalize">
-          {piece.category === '2d' ? '2D Engraving' : '3D Piece'}
+        <p className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent mb-1">
+          {piece.category === '2d' ? '2D' : '3D'}
           {piece.material ? ` · ${piece.material}` : ''}
         </p>
-        <h3 className="font-cinzel text-xs tracking-widest uppercase text-chalk mb-2">
+        <h3 className="font-cinzel text-sm tracking-wider uppercase text-chalk mb-2">
           {piece.title}
         </h3>
         {piece.price ? (

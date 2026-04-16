@@ -87,7 +87,7 @@ export default function AboutPage() {
                   className="w-8 h-px mb-6"
                   style={{ backgroundColor: 'var(--accent)' }}
                 />
-                <h3 className="font-cinzel text-xs tracking-[0.2em] uppercase text-chalk mb-4">
+                <h3 className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk mb-4">
                   {title}
                 </h3>
                 <p className="font-crimson text-stone leading-relaxed">{desc}</p>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 style={{ border: '1px solid var(--border)' }}
               >
                 <p className="font-cinzel text-4xl text-accent mb-5">{step}</p>
-                <h3 className="font-cinzel text-xs tracking-[0.18em] uppercase text-chalk mb-3">
+                <h3 className="font-cinzel text-sm tracking-[0.18em] uppercase text-chalk mb-3">
                   {title}
                 </h3>
                 <p className="font-crimson text-stone leading-relaxed">{desc}</p>
