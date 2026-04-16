@@ -2,27 +2,26 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Marquee from '@/components/marquee'
 import { Button } from '@/components/ui/button'
-import { PortfolioGrid } from '@/components/ui/portfolio-grid'
+import { PieceCarousel } from '@/components/ui/piece-carousel'
 import { getAllPieces } from '@/sanity/lib/queries'
 import { STATIC_PIECES } from '@/lib/static-pieces'
 
 export default async function HomePage() {
   const sanityPieces = await getAllPieces().catch(() => [])
   const allPieces = sanityPieces.length > 0 ? sanityPieces : STATIC_PIECES
-  const preview = allPieces.slice(0, 3)
 
   return (
     <>
       {/* ── Hero ── */}
       <section
-        className="relative min-h-screen flex items-center px-6 pt-16"
+        className="relative min-h-screen flex items-center px-8 pt-24"
         style={{
           background: 'linear-gradient(160deg, var(--deep) 0%, var(--black) 65%)',
         }}
       >
         {/* Faint ruled line */}
         <div
-          className="absolute left-6 top-0 bottom-0 w-px hidden lg:block"
+          className="absolute left-8 top-0 bottom-0 w-px hidden lg:block"
           style={{ backgroundColor: 'var(--border)' }}
         />
 
@@ -48,8 +47,8 @@ export default async function HomePage() {
               style={{ backgroundColor: 'var(--accent)' }}
             />
             <p className="font-crimson text-stone text-xl max-w-lg mb-12 leading-relaxed">
-              Bespoke metalwork — sculpted, engraved, forged by hand in Dublin.
-              No two pieces alike. No shortcuts taken.
+              Bespoke jewellery and metal engravings, made entirely by hand in
+              Dublin. Commissions welcomed — finished pieces available to buy.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/portfolio" variant="primary">
@@ -66,24 +65,21 @@ export default async function HomePage() {
             className="hidden lg:flex flex-col gap-px"
             style={{ backgroundColor: 'var(--border)' }}
           >
-            {/* Large top image: 2D-01 */}
             <div className="piece-img-wrap relative overflow-hidden aspect-[4/3]">
               <Image
                 src="/images/2D-01.png"
-                alt="Copper relief plate, abstract organic forms"
+                alt="Copper engraving, abstract organic forms"
                 fill
                 className="object-cover"
                 sizes="40vw"
                 priority
               />
             </div>
-
-            {/* Two smaller bottom images */}
             <div className="grid grid-cols-2 gap-px">
               <div className="piece-img-wrap relative overflow-hidden aspect-square">
                 <Image
                   src="/images/3D-04.png"
-                  alt="Wide hammered silver ring on fist"
+                  alt="Wide hammered silver ring"
                   fill
                   className="object-cover"
                   sizes="20vw"
@@ -93,7 +89,7 @@ export default async function HomePage() {
               <div className="piece-img-wrap relative overflow-hidden aspect-square">
                 <Image
                   src="/images/3D-01.png"
-                  alt="Silver chain weave ring on hand"
+                  alt="Silver chain weave ring"
                   fill
                   className="object-cover"
                   sizes="20vw"
@@ -109,117 +105,108 @@ export default async function HomePage() {
           <span className="font-cinzel text-[0.55rem] tracking-[0.3em] uppercase text-stone">
             Scroll
           </span>
-          <div
-            className="w-px h-8"
-            style={{ backgroundColor: 'var(--stone)' }}
-          />
+          <div className="w-px h-8" style={{ backgroundColor: 'var(--stone)' }} />
         </div>
       </section>
 
       {/* ── Marquee ── */}
       <Marquee />
 
-      {/* ── Portfolio Preview ── */}
-      <section className="py-28 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-14">
-            <div>
-              <p className="font-crimson italic text-ash mb-2">Selected work</p>
-              <h2 className="section-heading">The Portfolio</h2>
-            </div>
-            <Link
-              href="/portfolio"
-              className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-stone hover:text-accent transition-colors duration-200 hidden sm:block"
-            >
-              View All →
-            </Link>
+      {/* ── Selected Work carousel ── */}
+      <section className="py-14 px-8" style={{ borderBottom: '1px solid var(--border)' }}>
+        <div className="max-w-7xl mx-auto flex items-end justify-between mb-8">
+          <div>
+            <p className="font-crimson italic text-ash mb-1">A selection</p>
+            <h2 className="section-heading">Selected Work</h2>
           </div>
-
-          <PortfolioGrid pieces={preview} />
-
-          <div className="mt-12 sm:hidden">
-            <Button href="/portfolio" variant="ghost">
-              View All Work
-            </Button>
-          </div>
+          <Link
+            href="/portfolio"
+            className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-stone hover:text-accent transition-colors duration-200 hidden sm:block"
+          >
+            View All →
+          </Link>
         </div>
       </section>
+      <PieceCarousel pieces={allPieces} />
 
-      {/* ── About Snippet ── */}
+      {/* ── Available + Commission CTAs ── */}
       <section
-        className="py-28 px-6"
-        style={{ borderTop: '1px solid var(--border)' }}
+        className="px-8 py-0"
+        style={{ borderBottom: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="font-crimson italic text-ash mb-2">The maker</p>
-            <h2 className="section-heading mb-6">About Paddy</h2>
-            <p className="font-crimson text-stone text-lg leading-relaxed mb-4">
-              Paddy is a self-taught metalworker based in Dublin. Working out of
-              a small forge, he creates sculptures, engravings, and functional
-              art — each piece built from raw stock using traditional and modern
-              techniques.
-            </p>
-            <p className="font-crimson text-stone text-lg leading-relaxed mb-8">
-              The work is deliberate and unhurried. Material, form, and finish
-              are considered at every stage.
+        <div
+          className="max-w-7xl mx-auto grid md:grid-cols-2 gap-px"
+          style={{ backgroundColor: 'var(--border)' }}
+        >
+          {/* Available Now */}
+          <div
+            className="px-12 py-16"
+            style={{ backgroundColor: 'var(--deep)' }}
+          >
+            <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
+            <p className="font-crimson italic text-ash mb-2">Ready to ship</p>
+            <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
+              Available Pieces
+            </h2>
+            <p className="font-crimson text-stone text-lg leading-relaxed mb-8 max-w-sm">
+              A selection of finished pieces — ready to purchase with no wait.
+              Each one is unique and will not be remade.
             </p>
             <Link
-              href="/about"
+              href="/shop"
               className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
             >
-              Read More →
+              Browse Available Pieces →
             </Link>
           </div>
 
-          {/* Stats grid */}
+          {/* Commission */}
           <div
-            className="grid grid-cols-2 gap-px"
-            style={{ backgroundColor: 'var(--border)' }}
+            className="px-12 py-16"
+            style={{ backgroundColor: 'var(--iron)' }}
           >
-            {[
-              { value: '8+', label: 'Years Making' },
-              { value: '200+', label: 'Pieces Completed' },
-              { value: '3', label: 'Disciplines' },
-              { value: 'Dublin', label: 'Based In' },
-            ].map(({ value, label }) => (
-              <div
-                key={label}
-                className="py-10 px-8 text-center"
-                style={{ backgroundColor: 'var(--deep)' }}
-              >
-                <p className="font-cinzel text-3xl text-accent mb-1">{value}</p>
-                <p className="font-crimson italic text-stone text-sm">{label}</p>
-              </div>
-            ))}
+            <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
+            <p className="font-crimson italic text-ash mb-2">Made to order</p>
+            <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
+              Commission a Piece
+            </h2>
+            <p className="font-crimson text-stone text-lg leading-relaxed mb-8 max-w-sm">
+              Describe what you have in mind — material, form, size. All
+              commissions are considered. Response within 48 hours.
+            </p>
+            <Link
+              href="/enquire"
+              className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+            >
+              Make an Enquiry →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Enquiry CTA ── */}
+      {/* ── About snippet ── */}
       <section
-        className="py-36 px-6 text-center"
-        style={{
-          backgroundColor: 'var(--soot)',
-          borderTop: '1px solid var(--border)',
-        }}
+        className="py-28 px-8"
+        style={{ borderTop: '1px solid var(--border)' }}
       >
-        <div className="max-w-xl mx-auto">
-          <p className="font-crimson italic text-ash mb-4 text-lg">
-            Start a conversation
+        <div className="max-w-2xl mx-auto">
+          <p className="font-crimson italic text-ash mb-2">The maker</p>
+          <h2 className="section-heading mb-6">About Paddy</h2>
+          <p className="font-crimson text-stone text-lg leading-relaxed mb-4">
+            Paddy is a self-taught metalworker based in Dublin. He makes
+            jewellery in silver and gold — rings, bands, and wearable pieces —
+            alongside copper engravings worked by hand.
           </p>
-          <h2 className="section-heading mb-4">Commission a Piece</h2>
-          <div
-            className="w-16 h-px mx-auto mb-8"
-            style={{ backgroundColor: 'var(--accent)' }}
-          />
-          <p className="font-crimson text-stone text-lg mb-10 leading-relaxed">
-            Whether you have a clear vision or just an idea, get in touch. All
-            commissions are considered.
+          <p className="font-crimson text-stone text-lg leading-relaxed mb-8">
+            The work is deliberate and unhurried. Material, form, and finish
+            are considered at every stage. No two pieces are the same.
           </p>
-          <Button href="/enquire" variant="primary">
-            Make an Enquiry
-          </Button>
+          <Link
+            href="/about"
+            className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+          >
+            Read More →
+          </Link>
         </div>
       </section>
     </>

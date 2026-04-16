@@ -51,3 +51,10 @@ export async function getAvailablePieces(): Promise<Piece[]> {
   if (!client) return []
   return client.fetch<Piece[]>(AVAILABLE_PIECES_QUERY)
 }
+
+const PIECE_BY_SLUG_QUERY = `*[_type == "piece" && slug.current == $slug][0] { ${PIECE_FIELDS} }`
+
+export async function getPieceBySlug(slug: string): Promise<Piece | null> {
+  if (!client) return null
+  return client.fetch<Piece | null>(PIECE_BY_SLUG_QUERY, { slug })
+}

@@ -77,10 +77,9 @@
     filter: grayscale(20%) brightness(0.9);
   }
 
-  /* Logo images — fully desaturated at reduced brightness */
+  /* Logo image — transparent PNG, no filter needed */
   .logo-img img {
-    filter: grayscale(100%) brightness(0.55);
-    transition: filter 0.4s ease;
+    transition: opacity 0.4s ease;
   }
 
   .copper-rule {
@@ -92,7 +91,7 @@
   }
 }
 
-/* Marquee animation */
+/* Marquee / carousel shared animation */
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
@@ -109,5 +108,16 @@
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 1px;
+  animation: marquee-scroll 60s linear infinite;
+}
+
+.carousel-track:hover {
   animation-play-state: paused;
 }

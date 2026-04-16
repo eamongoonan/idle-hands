@@ -1,9 +1,7 @@
 const ITEMS = [
   'FORGE',
-  'WELD',
+  'ENGRAVE',
   'GRIND',
-  'ETCH',
-  'CAST',
   'SHAPE',
   'TEMPER',
   'FINISH',
@@ -11,9 +9,10 @@ const ITEMS = [
   'DUBLIN',
   'METALWORK',
   'HANDCRAFTED',
-  'STEEL',
+  'SILVER',
+  'GOLD',
   'COPPER',
-  'BRASS',
+  'JEWELLERY',
 ]
 
 export default function Marquee() {

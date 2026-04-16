@@ -2,7 +2,7 @@ import type { Piece } from '@/sanity/lib/queries'
 import { PieceCard } from './piece-card'
 
 interface PortfolioGridProps {
-  pieces: Piece[]
+  readonly pieces: Piece[]
 }
 
 export function PortfolioGrid({ pieces }: PortfolioGridProps) {
@@ -23,7 +23,7 @@ export function PortfolioGrid({ pieces }: PortfolioGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
       {pieces.map((piece) => (
         <PieceCard key={piece._id} piece={piece} />
       ))}

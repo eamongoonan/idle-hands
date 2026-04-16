@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'About Paddy — self-taught metalworker based in Dublin, creating bespoke sculptures and engravings.',
+    'About Paddy — self-taught metalworker based in Dublin, making bespoke jewellery and metal engravings.',
 }
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-32 pb-28 px-6">
+    <div className="min-h-screen pt-32 pb-28 px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-20">
@@ -23,14 +23,14 @@ export default function AboutPage() {
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               Paddy is a self-taught metalworker based in Dublin, Ireland. What
-              began as tinkering with scrap steel in a rented garage has grown
-              into a full practice spanning 3D sculptural work, precision 2D
-              engravings, and bespoke commissions for private clients.
+              began as an interest in working with raw materials has grown into a
+              full practice — handmade jewellery in silver and gold, and
+              precision engravings worked into copper.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               The work is intentionally spare. No decoration for decoration's
-              sake. Every mark, every weld, every finish is considered. The
-              materials speak — mild steel, copper, brass — without embellishment.
+              sake. Every mark and every finish is considered. The materials
+              speak without embellishment.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-10">
               Commissions are accepted on a rolling basis. The enquiry process
@@ -56,50 +56,27 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 flex items-end p-8">
               <p className="font-crimson italic text-ash text-sm">
-                Paddy at work · Dublin forge
+                Paddy at work · Dublin
               </p>
             </div>
           </div>
         </div>
 
-        {/* Stats */}
-        <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-px mb-28"
-          style={{ backgroundColor: 'var(--border)' }}
-        >
-          {[
-            { value: '2016', label: 'Started Making' },
-            { value: '8+', label: 'Years Experience' },
-            { value: '200+', label: 'Pieces Completed' },
-            { value: '3', label: 'Disciplines' },
-          ].map(({ value, label }) => (
-            <div
-              key={label}
-              className="py-12 px-8 text-center"
-              style={{ backgroundColor: 'var(--deep)' }}
-            >
-              <p className="font-cinzel text-4xl text-accent mb-2">{value}</p>
-              <p className="font-crimson italic text-stone text-sm">{label}</p>
-            </div>
-          ))}
-        </div>
-
         {/* Disciplines */}
         <div className="mb-28">
-          <h2 className="section-heading mb-10">Disciplines</h2>
-          <div className="grid md:grid-cols-3 gap-px" style={{ backgroundColor: 'var(--border)' }}>
+          <h2 className="section-heading mb-10">The Work</h2>
+          <div
+            className="grid md:grid-cols-2 gap-px"
+            style={{ backgroundColor: 'var(--border)' }}
+          >
             {[
               {
-                title: '3D Sculpture',
-                desc: 'Freestanding and wall-mounted sculptural pieces. Welded, ground, and finished by hand. Abstract and figurative work undertaken.',
+                title: '3D Jewelry',
+                desc: 'Rings, bands, and wearable pieces made by hand in silver and gold. Stones — diamonds, precious, and semi-precious gems — set to order. Each piece is formed without casting or moulding; the marks of the process remain in the metal.',
               },
               {
                 title: '2D Engraving',
-                desc: 'Precision line work etched or engraved into steel and copper sheet. Portraits, lettering, abstract patterns, and custom designs.',
-              },
-              {
-                title: 'Custom Commission',
-                desc: 'Functional and decorative pieces made to specification — gates, brackets, frames, signage, and objects for the home.',
+                desc: 'Precision line work engraved directly into copper and metal sheet. Portraits, lettering, abstract patterns, and custom designs. The depth and texture of the line work is built up over many passes with hand tools.',
               },
             ].map(({ title, desc }) => (
               <div
@@ -138,7 +115,7 @@ export default function AboutPage() {
               {
                 step: '03',
                 title: 'Make',
-                desc: 'The piece is fabricated by hand. Progress photos shared throughout. On completion, delivery or collection arranged.',
+                desc: 'The piece is made by hand. Progress photos shared throughout. On completion, delivery or collection arranged.',
               },
             ].map(({ step, title, desc }) => (
               <div

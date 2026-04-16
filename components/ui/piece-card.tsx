@@ -1,19 +1,20 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import type { Piece } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/client'
 
 interface PieceCardProps {
-  piece: Piece
+  readonly piece: Piece
 }
 
-export function PieceCard({ piece }: PieceCardProps) {
+export function PieceCard({ piece }: Readonly<PieceCardProps>) {
   const imageUrl = piece.mainImage
     ? urlFor(piece.mainImage).width(700).height(700).url()
     : (piece.localImage ?? null)
 
   return (
+    <Link href={`/portfolio/${piece.slug.current}`} className="group block">
     <article
-      className="group"
       style={{ borderBottom: '1px solid var(--border)' }}
     >
       {/* Image */}
@@ -71,5 +72,6 @@ export function PieceCard({ piece }: PieceCardProps) {
         ) : null}
       </div>
     </article>
+    </Link>
   )
 }

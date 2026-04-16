@@ -20,13 +20,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
         <div>
-          <div className="logo-img relative w-10 h-10 overflow-hidden mb-3">
+          <div className="logo-img relative w-14 h-14 mb-3">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Idle Hands"
               fill
-              className="object-cover"
-              sizes="40px"
+              className="object-contain"
+              sizes="56px"
             />
           </div>
           <p className="font-cinzel text-xs tracking-[0.25em] text-chalk uppercase mb-1">
