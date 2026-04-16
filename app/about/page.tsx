@@ -22,10 +22,9 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-16 items-start mb-28">
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
-              Paddy is a self-taught metalworker based in Dublin, Ireland. What
-              began as an interest in working with raw materials has grown into a
-              full practice — handmade jewellery in silver and gold, and
-              precision engravings worked into copper.
+              Paddy is a metalworker based in Dublin, Ireland. His practice spans
+              handmade jewellery in silver and gold, and precision engravings
+              worked into copper.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               The work is intentionally spare. No decoration for decoration&apos;s

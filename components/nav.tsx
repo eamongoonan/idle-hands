@@ -19,23 +19,23 @@ export default function Nav() {
         borderBottom: '1px solid var(--border)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
         {/* Logo + wordmark */}
-        <Link href="/" className="flex items-center gap-4 shrink-0">
-          <div className="logo-img relative w-16 h-16 shrink-0">
+        <Link href="/" className="flex items-center gap-5 shrink-0">
+          <div className="logo-img relative w-20 h-20 shrink-0">
             <Image
               src="/logo.png"
               alt="Idle Hands"
               fill
               className="object-contain"
-              sizes="64px"
+              sizes="80px"
             />
           </div>
           <div className="leading-snug">
-            <p className="font-cinzel text-base tracking-[0.2em] text-chalk uppercase">
+            <p className="font-cinzel text-xl tracking-[0.2em] text-chalk uppercase">
               Idle Hands
             </p>
-            <p className="font-crimson text-sm italic text-stone">
+            <p className="font-crimson text-base italic text-stone">
               Handcrafted Metalwork · Dublin
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
-              className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200"
+              className="font-cinzel text-xs tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200"
             >
               {label}
             </Link>

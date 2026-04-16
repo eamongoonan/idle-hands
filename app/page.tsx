@@ -11,52 +11,18 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ── Hero ── */}
+      {/* ── Selected Work carousel — first thing below the nav ── */}
       <section
-        className="px-8 pt-36 pb-16"
-        style={{
-          background: 'linear-gradient(160deg, var(--deep) 0%, var(--black) 65%)',
-        }}
+        className="pt-28 pb-0"
+        style={{ borderBottom: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto">
-          <p className="font-crimson italic text-stone text-lg mb-5 tracking-wide">
-            Handcrafted in Dublin
-          </p>
-          <h1
-            className="font-cinzel font-bold text-chalk uppercase leading-none mb-6"
-            style={{
-              fontSize: 'clamp(3.5rem, 10vw, 9rem)',
-              letterSpacing: '0.04em',
-            }}
-          >
-            Idle Hands
-          </h1>
-          <div
-            className="w-20 h-px mb-8"
-            style={{ backgroundColor: 'var(--accent)' }}
-          />
-          <p className="font-crimson text-stone text-xl max-w-xl leading-relaxed">
-            Bespoke jewellery and metal engravings, made entirely by hand in
-            Dublin. Commissions welcomed — finished pieces available to buy.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Selected Work carousel ── */}
-      <section
-        className="pt-12 pb-0 px-8"
-        style={{
-          background: 'linear-gradient(160deg, var(--deep) 0%, var(--black) 65%)',
-          borderBottom: '1px solid var(--border)',
-        }}
-      >
-        <div className="max-w-7xl mx-auto flex items-end justify-between mb-6">
-          <p className="font-cinzel text-[0.65rem] tracking-[0.2em] uppercase text-ash">
+        <div className="max-w-7xl mx-auto px-8 flex items-end justify-between py-8">
+          <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-ash">
             Selected Work
           </p>
           <Link
             href="/portfolio"
-            className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-stone hover:text-accent transition-colors duration-200"
+            className="font-cinzel text-xs tracking-[0.18em] uppercase text-stone hover:text-accent transition-colors duration-200"
           >
             View All →
           </Link>
@@ -64,15 +30,24 @@ export default async function HomePage() {
       </section>
       <PieceCarousel pieces={allPieces} />
 
-      {/* ── Buttons ── */}
-      <section className="px-8 py-12" style={{ borderBottom: '1px solid var(--border)' }}>
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-4">
-          <Button href="/portfolio" variant="primary">
-            View Portfolio
-          </Button>
-          <Button href="/enquire" variant="ghost">
-            Commission a Piece
-          </Button>
+      {/* ── Description + buttons ── */}
+      <section
+        className="px-8 py-16"
+        style={{ borderBottom: '1px solid var(--border)' }}
+      >
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-10">
+          <p className="font-crimson text-stone text-xl max-w-xl leading-relaxed">
+            Bespoke jewellery and metal engravings, made entirely by hand in
+            Dublin. Commissions welcomed — finished pieces available to buy.
+          </p>
+          <div className="flex flex-wrap gap-4 shrink-0">
+            <Button href="/portfolio" variant="primary">
+              View Portfolio
+            </Button>
+            <Button href="/enquire" variant="ghost">
+              Commission a Piece
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -87,7 +62,7 @@ export default async function HomePage() {
         >
           <div className="px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--deep)' }}>
             <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
-            <p className="font-crimson italic text-ash mb-2">Ready to ship</p>
+            <p className="font-crimson italic text-ash mb-2 text-base">Ready to ship</p>
             <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
               Available Pieces
             </h2>
@@ -97,7 +72,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/shop"
-              className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+              className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
             >
               Browse Available Pieces →
             </Link>
@@ -105,7 +80,7 @@ export default async function HomePage() {
 
           <div className="px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--iron)' }}>
             <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
-            <p className="font-crimson italic text-ash mb-2">Made to order</p>
+            <p className="font-crimson italic text-ash mb-2 text-base">Made to order</p>
             <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
               Commission a Piece
             </h2>
@@ -115,7 +90,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/enquire"
-              className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+              className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
             >
               Make an Enquiry →
             </Link>
@@ -126,12 +101,12 @@ export default async function HomePage() {
       {/* ── About snippet ── */}
       <section className="py-28 px-8">
         <div className="max-w-2xl mx-auto">
-          <p className="font-crimson italic text-ash mb-2">The maker</p>
+          <p className="font-crimson italic text-ash mb-2 text-base">The maker</p>
           <h2 className="section-heading mb-6">About Paddy</h2>
           <p className="font-crimson text-stone text-lg leading-relaxed mb-4">
-            Paddy is a self-taught metalworker based in Dublin. He makes
-            jewellery in silver and gold — rings, bands, and wearable pieces —
-            alongside copper engravings worked by hand.
+            Paddy is a metalworker based in Dublin. He makes jewellery in silver
+            and gold — rings, bands, and wearable pieces — alongside copper
+            engravings worked by hand.
           </p>
           <p className="font-crimson text-stone text-lg leading-relaxed mb-8">
             The work is deliberate and unhurried. Material, form, and finish
@@ -139,7 +114,7 @@ export default async function HomePage() {
           </p>
           <Link
             href="/about"
-            className="font-cinzel text-[0.65rem] tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+            className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
           >
             Read More →
           </Link>
