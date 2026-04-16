@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'About Patrick Watts — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+    'About Idle Hands — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
   openGraph: {
     title: 'About | Idle Hands',
     description:
-      'About Patrick Watts — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+      'About Idle Hands — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
     url: 'https://idle-hands-chi.vercel.app/about',
   },
 }
@@ -20,7 +20,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="mb-10 md:mb-20">
           <p className="font-crimson italic text-ash mb-2">The maker</p>
-          <h1 className="section-heading mb-3">About Patrick Watts</h1>
+          <h1 className="section-heading mb-3">About Idle Hands</h1>
           <div className="w-16 h-px" style={{ backgroundColor: 'var(--accent)' }} />
         </div>
 
