@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'About Paddy — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+    'About Patrick — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
   openGraph: {
     title: 'About | Idle Hands',
     description:
-      'About Paddy — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+      'About Patrick — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
     url: 'https://idle-hands-chi.vercel.app/about',
   },
 }
@@ -20,7 +20,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="mb-10 md:mb-20">
           <p className="font-crimson italic text-ash mb-2">The maker</p>
-          <h1 className="section-heading mb-3">About Paddy</h1>
+          <h1 className="section-heading mb-3">About Patrick</h1>
           <div className="w-16 h-px" style={{ backgroundColor: 'var(--accent)' }} />
         </div>
 
@@ -28,13 +28,13 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16 md:mb-28">
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
-              Paddy is a metalworker based in Dublin, Ireland. His practice spans
+              Patrick is a metalworker based in Dublin, Ireland. His practice spans
               handmade jewellery — wrought in silver and gold, set with diamonds
               and precious stones — and precision engravings worked into copper.
             </p>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               The copper work continues a family tradition: his grandfather was
-              an engraver, and that thread runs through everything Paddy makes.
+              an engraver, and that thread runs through everything Patrick makes.
               The work is intentionally spare — every mark and every finish
               considered, the materials speaking without embellishment.
             </p>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 flex items-end p-8">
               <p className="font-crimson italic text-ash text-sm">
-                Paddy at work · Dublin
+                Patrick at work · Dublin
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
               },
               {
                 title: '2D Engraving',
-                desc: 'Precision line work engraved directly into copper — a craft Paddy inherited from his grandfather. Portraits, lettering, abstract patterns, and custom designs built up over many passes with hand tools.',
+                desc: 'Precision line work engraved directly into copper — a craft Patrick inherited from his grandfather. Portraits, lettering, abstract patterns, and custom designs built up over many passes with hand tools.',
               },
             ].map(({ title, desc }) => (
               <div

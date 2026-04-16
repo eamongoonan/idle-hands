@@ -30,37 +30,58 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Commission note */}
-        <div className="sm:text-right max-w-xs sm:max-w-sm">
-          <p className="font-crimson text-stone text-sm leading-relaxed mb-3">
-            All pieces are made by hand in Dublin. Commissions open year-round —
-            response within 48 hours.
-          </p>
-          <Link
-            href="/enquire"
-            className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+        {/* Commission note + Instagram */}
+        <div className="sm:text-right max-w-xs sm:max-w-sm flex flex-col gap-6">
+          <div>
+            <p className="font-crimson text-stone text-sm leading-relaxed mb-3">
+              All pieces are made by hand in Dublin. Commissions open year-round —
+              response within 48 hours.
+            </p>
+            <Link
+              href="/enquire"
+              className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+            >
+              Make an Enquiry →
+            </Link>
+          </div>
+
+          <a
+            href="https://www.instagram.com/idlehandsdublin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 sm:justify-end group"
           >
-            Make an Enquiry →
-          </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-stone group-hover:text-chalk transition-colors duration-200"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg>
+            <span className="font-cinzel text-xs tracking-[0.18em] uppercase text-stone group-hover:text-chalk transition-colors duration-200">
+              @idlehandsdublin
+            </span>
+          </a>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div
-        className="max-w-7xl mx-auto mt-12 pt-6 flex flex-row justify-between items-center"
+        className="max-w-7xl mx-auto mt-12 pt-6"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <p className="font-crimson text-ash text-xs">
           © {new Date().getFullYear()} Idle Hands
         </p>
-        <a
-          href="https://www.instagram.com/idlehandsdublin"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-crimson text-ash text-xs hover:text-stone transition-colors duration-200"
-        >
-          @idlehandsdublin
-        </a>
       </div>
     </footer>
   )

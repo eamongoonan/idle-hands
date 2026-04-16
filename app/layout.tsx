@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | Idle Hands',
   },
   description:
-    'Bespoke handcrafted metalwork from Dublin — 2D engravings, 3D sculptural pieces, and custom commissions by Paddy.',
+    'Bespoke handcrafted metalwork from Dublin — 2D engravings, 3D sculptural pieces, and custom commissions by Patrick.',
   openGraph: {
     siteName: 'Idle Hands',
     type: 'website',
