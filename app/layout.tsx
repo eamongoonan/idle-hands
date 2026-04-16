@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Idle Hands',
     type: 'website',
     locale: 'en_IE',
+    images: [{ url: '/logo.png', width: 512, height: 512, alt: 'Idle Hands' }],
   },
   twitter: {
     card: 'summary_large_image',
