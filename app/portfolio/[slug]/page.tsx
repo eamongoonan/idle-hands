@@ -60,6 +60,7 @@ export default async function PiecePage({ params }: Props) {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 xl:gap-24 items-start">
 
           {/* Image */}
+          <div className="lg:sticky lg:top-28">
           <div
             className="piece-img-wrap relative overflow-hidden aspect-square w-full"
             style={{ backgroundColor: 'var(--iron)' }}
@@ -94,6 +95,7 @@ export default async function PiecePage({ params }: Props) {
                 </span>
               </div>
             )}
+          </div>
           </div>
 
           {/* Detail */}
