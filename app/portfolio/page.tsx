@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Portfolio',
   description:
     'The full body of work — 3D sculptural pieces and 2D engravings by Idle Hands, Dublin.',
+  openGraph: {
+    title: 'Portfolio | Idle Hands',
+    description:
+      'The full body of work — 3D sculptural pieces and 2D engravings by Idle Hands, Dublin.',
+    url: 'https://idle-hands-chi.vercel.app/portfolio',
+  },
 }
 
 export default async function PortfolioPage() {

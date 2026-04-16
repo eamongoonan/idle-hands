@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 
 type EnquiryType = '3d' | '2d' | 'general'
@@ -19,14 +20,23 @@ const ENQUIRY_TYPES: { value: EnquiryType; label: string; hint: string }[] = [
   { value: 'general', label: 'General', hint: 'Question or other enquiry' },
 ]
 
-export default function EnquirePage() {
+function EnquireForm() {
+  const searchParams = useSearchParams()
+  const pieceTitle = searchParams.get('piece')
+
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
     type: 'general',
-    message: '',
+    message: pieceTitle ? `I'm enquiring about "${pieceTitle}".` : '',
     budget: '',
   })
+
+  useEffect(() => {
+    if (pieceTitle) {
+      setForm((f) => ({ ...f, message: `I'm enquiring about "${pieceTitle}".` }))
+    }
+  }, [pieceTitle])
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) =>
@@ -242,5 +252,13 @@ export default function EnquirePage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function EnquirePage() {
+  return (
+    <Suspense>
+      <EnquireForm />
+    </Suspense>
   )
 }

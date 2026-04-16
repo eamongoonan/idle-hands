@@ -29,7 +29,7 @@ export default function PortfolioTabs({ pieces }: { pieces: Piece[] }) {
           <button
             key={tab.value}
             onClick={() => setActive(tab.value)}
-            className="font-cinzel text-sm tracking-[0.2em] uppercase px-6 py-3.5 shrink-0 transition-colors duration-200"
+            className="font-cinzel text-sm tracking-[0.2em] uppercase px-6 py-3.5 shrink-0 whitespace-nowrap transition-colors duration-200"
             style={{
               color: active === tab.value ? 'var(--chalk)' : 'var(--ash)',
               borderBottom:

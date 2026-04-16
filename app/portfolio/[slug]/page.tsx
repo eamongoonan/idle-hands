@@ -19,9 +19,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     null
 
   if (!piece) return {}
+  const description = piece.description ?? `${piece.title} — handcrafted metalwork by Idle Hands, Dublin.`
   return {
     title: piece.title,
-    description: piece.description ?? `${piece.title} — handcrafted metalwork by Idle Hands, Dublin.`,
+    description,
+    openGraph: {
+      title: `${piece.title} | Idle Hands`,
+      description,
+      url: `https://idle-hands-chi.vercel.app/portfolio/${slug}`,
+    },
   }
 }
 
@@ -155,7 +161,10 @@ export default async function PiecePage({ params }: Props) {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="/enquire" variant="primary">
+              <Button
+                href={`/enquire?piece=${encodeURIComponent(piece.title)}`}
+                variant="primary"
+              >
                 {piece.available ? 'Enquire to Purchase' : 'Commission Similar'}
               </Button>
               <Button href="/portfolio" variant="ghost">

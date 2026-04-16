@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'About Paddy — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+  openGraph: {
+    title: 'About | Idle Hands',
+    description:
+      'About Paddy — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
+    url: 'https://idle-hands-chi.vercel.app/about',
+  },
 }
 
 export default function AboutPage() {

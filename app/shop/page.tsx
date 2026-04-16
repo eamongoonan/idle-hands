@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: 'Available Pieces',
   description:
     'One-of-a-kind pieces available to purchase — 3D sculptures and 2D engravings by Idle Hands, Dublin.',
+  openGraph: {
+    title: 'Available Pieces | Idle Hands',
+    description:
+      'One-of-a-kind pieces available to purchase — 3D sculptures and 2D engravings by Idle Hands, Dublin.',
+    url: 'https://idle-hands-chi.vercel.app/shop',
+  },
 }
 
 export default async function ShopPage() {

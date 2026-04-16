@@ -9,25 +9,9 @@ Status: `open` | `in progress` | `done`
 
 ---
 
-## In Progress
-
-### #001 — UI polish pass (font sizes, nav, carousel, copy, shop)
-**Status:** in progress — uncommitted changes across multiple files
-**Detail:** Adjustments to font sizes, nav layout, carousel behaviour, about page copy, footer, marquee, button styles, and static piece data. New 2D-05 image added, 3D-05 removed.
-**Next:** Review on Vercel preview, commit when satisfied.
-
----
-
 ## Open
 
-### #002 — Connect Sanity CMS to live data
-**Status:** open
-**Detail:** `NEXT_PUBLIC_SANITY_PROJECT_ID` is not set on Vercel. The site currently runs entirely on static fallback data. Sanity project needs to be created/configured and env vars added to Vercel.
-**Depends on:** Client providing content, or seeding CMS with current static pieces.
-
-### #003 — Set up Sanity Studio for client
-**Status:** open
-**Detail:** Client needs a way to add/edit pieces and update content without touching code. Options: (a) add a `/studio` route to this repo, (b) create a separate Sanity Studio deployment, (c) use sanity.io/manage directly. Need to agree approach with client and document login process.
+### #004 — SEO metadata
 
 ### #004 — SEO metadata
 **Status:** open
@@ -52,6 +36,18 @@ Status: `open` | `in progress` | `done`
 ---
 
 ## Done
+
+### #001 — UI polish pass
+**Status:** done — 2026-04-16
+**Detail:** Mobile-responsive spacing across all pages, nav/logo scaling, Instagram footer link, piece category fix, DECISIONS.md and ISSUES.md added.
+
+### #002 — Connect Sanity CMS to live data
+**Status:** done — 2026-04-16
+**Detail:** Sanity project created (ID: xt6zonxj), env vars added to Vercel, studio embedded at /studio.
+
+### #003 — Set up Sanity Studio for client
+**Status:** done — 2026-04-16
+**Detail:** Studio embedded at /studio route using next-sanity v9. Client accesses via the live domain.
 
 ### #009 — Initial site build
 **Status:** done — 2026-04-15

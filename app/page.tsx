@@ -1,4 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Idle Hands | Handcrafted Metalwork · Dublin',
+  description:
+    'Bespoke jewellery and metal engravings, made entirely by hand in Dublin. Commissions welcomed — finished pieces available to buy.',
+  openGraph: {
+    title: 'Idle Hands | Handcrafted Metalwork · Dublin',
+    description:
+      'Bespoke jewellery and metal engravings, made entirely by hand in Dublin. Commissions welcomed — finished pieces available to buy.',
+    url: 'https://idle-hands-chi.vercel.app',
+  },
+}
 import Marquee from '@/components/marquee'
 import { Button } from '@/components/ui/button'
 import { PieceCarousel } from '@/components/ui/piece-carousel'
@@ -60,7 +73,7 @@ export default async function HomePage() {
           className="grid md:grid-cols-2 gap-px"
           style={{ backgroundColor: 'var(--border)' }}
         >
-          <div className="px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--deep)' }}>
+          <div className="px-4 sm:px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--deep)' }}>
             <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
             <p className="font-crimson italic text-ash mb-2 text-base">Ready to ship</p>
             <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">
@@ -78,7 +91,7 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--iron)' }}>
+          <div className="px-4 sm:px-8 md:px-12 py-16" style={{ backgroundColor: 'var(--iron)' }}>
             <div className="w-8 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
             <p className="font-crimson italic text-ash mb-2 text-base">Made to order</p>
             <h2 className="font-cinzel text-chalk uppercase tracking-[0.12em] text-2xl mb-6">

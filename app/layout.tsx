@@ -5,12 +5,21 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://idle-hands-chi.vercel.app'),
   title: {
     default: 'Idle Hands | Handcrafted Metalwork · Dublin',
     template: '%s | Idle Hands',
   },
   description:
     'Bespoke handcrafted metalwork from Dublin — 2D engravings, 3D sculptural pieces, and custom commissions by Paddy.',
+  openGraph: {
+    siteName: 'Idle Hands',
+    type: 'website',
+    locale: 'en_IE',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 }
 
 export default function RootLayout({
