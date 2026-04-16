@@ -40,18 +40,18 @@ export default async function PiecePage({ params }: Props) {
   const categoryLabel = piece.category === '2d' ? '2D Engraving' : '3D Piece'
 
   return (
-    <div className="min-h-screen pt-32 pb-28 px-8">
+    <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Back link */}
         <Link
           href="/portfolio"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200 mb-14"
+          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.18em] uppercase text-stone hover:text-chalk transition-colors duration-200 mb-8 md:mb-14"
         >
           ← All Work
         </Link>
 
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 xl:gap-24 items-start">
 
           {/* Image */}
           <div

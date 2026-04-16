@@ -33,7 +33,7 @@ export default function Marquee() {
           <span
             key={i}
             className="font-cinzel text-[0.6rem] tracking-[0.35em] uppercase whitespace-nowrap"
-            style={{ color: 'var(--ash)', padding: '0 2rem' }}
+            style={{ color: 'var(--ash)', padding: '0 1rem' }}
           >
             {item}
             <span style={{ color: 'var(--accent)', marginLeft: '2rem' }}>·</span>

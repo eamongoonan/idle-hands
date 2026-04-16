@@ -68,7 +68,7 @@ export default function EnquirePage() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-28 px-6">
+    <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-6">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <p className="font-crimson italic text-ash mb-2">Get in touch</p>

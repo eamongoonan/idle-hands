@@ -19,23 +19,23 @@ export default function Nav() {
         borderBottom: '1px solid var(--border)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 md:h-28 flex items-center justify-between">
         {/* Logo + wordmark */}
-        <Link href="/" className="flex items-center gap-5 shrink-0">
-          <div className="logo-img relative w-20 h-20 shrink-0">
+        <Link href="/" className="flex items-center gap-3 md:gap-5 shrink-0">
+          <div className="logo-img relative w-14 h-14 md:w-20 md:h-20 shrink-0">
             <Image
               src="/logo.png"
               alt="Idle Hands"
               fill
               className="object-contain"
-              sizes="80px"
+              sizes="(min-width: 768px) 80px, 56px"
             />
           </div>
           <div className="leading-snug">
-            <p className="font-cinzel text-xl tracking-[0.2em] text-chalk uppercase">
+            <p className="font-cinzel text-base md:text-xl tracking-[0.2em] text-chalk uppercase">
               Idle Hands
             </p>
-            <p className="font-crimson text-base italic text-stone">
+            <p className="font-crimson text-sm md:text-base italic text-stone">
               Handcrafted Metalwork · Dublin
             </p>
           </div>

@@ -21,7 +21,7 @@ export function Button({
   className = '',
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center font-cinzel text-[0.65rem] tracking-[0.22em] uppercase px-8 py-3.5 transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed'
+    'inline-flex items-center justify-center font-cinzel text-[0.65rem] tracking-[0.22em] uppercase px-5 sm:px-8 py-3.5 transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed'
 
   const primaryStyle = {
     backgroundColor: 'var(--accent)',

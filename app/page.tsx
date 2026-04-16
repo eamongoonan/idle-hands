@@ -13,10 +13,10 @@ export default async function HomePage() {
     <>
       {/* ── Selected Work carousel — first thing below the nav ── */}
       <section
-        className="pt-28 pb-0"
+        className="pt-20 md:pt-28 pb-0"
         style={{ borderBottom: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto px-8 flex items-end justify-between py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-end justify-between py-8">
           <p className="font-cinzel text-sm tracking-[0.2em] uppercase text-ash">
             Selected Work
           </p>
@@ -32,7 +32,7 @@ export default async function HomePage() {
 
       {/* ── Description + buttons ── */}
       <section
-        className="px-8 py-16"
+        className="px-4 sm:px-8 py-16"
         style={{ borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-10">
@@ -99,7 +99,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── About snippet ── */}
-      <section className="py-28 px-8">
+      <section className="py-16 md:py-28 px-4 sm:px-8">
         <div className="max-w-2xl mx-auto">
           <p className="font-crimson italic text-ash mb-2 text-base">The maker</p>
           <h2 className="section-heading mb-6">About Paddy</h2>

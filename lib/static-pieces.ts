@@ -79,14 +79,14 @@ export const STATIC_PIECES: Piece[] = [
     description: 'Two aluminium open cuffs on wooden anvil block.',
   },
   {
-    _id: 'static-3d-05',
+    _id: 'static-2d-05',
     title: 'Hammered Wide Band II',
     slug: { current: 'hammered-wide-band-ii' },
-    category: '3d',
+    category: '2d',
     material: 'Silver',
     available: true,
     price: 280,
-    localImage: '/images/3D-05.png',
+    localImage: '/images/2D-05.png',
     description: 'Wide hammered silver ring, close-up on fist.',
   },
 ]

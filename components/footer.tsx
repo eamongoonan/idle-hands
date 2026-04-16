@@ -66,6 +66,14 @@ export default function Footer() {
         <p className="font-crimson text-ash text-xs">
           © {new Date().getFullYear()} Idle Hands
         </p>
+        <a
+          href="https://www.instagram.com/idlehandsdublin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-crimson text-ash text-xs hover:text-stone transition-colors duration-200"
+        >
+          @idlehandsdublin
+        </a>
         <p className="font-crimson italic text-ash text-xs">
           Made by hand. Built with care.
         </p>

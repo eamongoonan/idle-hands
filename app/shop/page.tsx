@@ -14,7 +14,7 @@ export default async function ShopPage() {
   const pieces = sanityPieces.length > 0 ? sanityPieces : STATIC_AVAILABLE
 
   return (
-    <div className="min-h-screen pt-32 pb-28 px-6">
+    <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">

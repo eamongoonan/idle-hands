@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-32 pb-28 px-8">
+    <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-10 md:mb-20">
           <p className="font-crimson italic text-ash mb-2">The maker</p>
           <h1 className="section-heading mb-3">About Paddy</h1>
           <div className="w-16 h-px" style={{ backgroundColor: 'var(--accent)' }} />
         </div>
 
         {/* Bio + portrait placeholder */}
-        <div className="grid md:grid-cols-2 gap-16 items-start mb-28">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start mb-16 md:mb-28">
           <div>
             <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               Paddy is a metalworker based in Dublin, Ireland. His practice spans
@@ -63,8 +63,8 @@ export default function AboutPage() {
         </div>
 
         {/* Disciplines */}
-        <div className="mb-28">
-          <h2 className="section-heading mb-10">The Work</h2>
+        <div className="mb-16 md:mb-28">
+          <h2 className="section-heading mb-8 md:mb-10">The Work</h2>
           <div
             className="grid md:grid-cols-2 gap-px"
             style={{ backgroundColor: 'var(--border)' }}
@@ -81,7 +81,7 @@ export default function AboutPage() {
             ].map(({ title, desc }) => (
               <div
                 key={title}
-                className="p-10"
+                className="p-6 md:p-10"
                 style={{ backgroundColor: 'var(--deep)' }}
               >
                 <div
@@ -100,7 +100,7 @@ export default function AboutPage() {
         {/* Process */}
         <div>
           <h2 className="section-heading mb-10">The Process</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
             {[
               {
                 step: '01',
@@ -120,7 +120,7 @@ export default function AboutPage() {
             ].map(({ step, title, desc }) => (
               <div
                 key={step}
-                className="p-8"
+                className="p-5 md:p-8"
                 style={{ border: '1px solid var(--border)' }}
               >
                 <p className="font-cinzel text-4xl text-accent mb-5">{step}</p>
