@@ -104,7 +104,7 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 70s linear infinite;
 }
 
 .marquee-track:hover {
