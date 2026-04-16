@@ -158,7 +158,11 @@ export default async function PiecePage({ params }: Props) {
 
             <div className="flex flex-wrap gap-4">
               <Button
-                href={`/enquire?piece=${encodeURIComponent(piece.title)}`}
+                href={
+                  piece.available && piece.price
+                    ? `/enquire?piece=${encodeURIComponent(piece.title)}&price=${piece.price}&buy=1`
+                    : `/enquire?piece=${encodeURIComponent(piece.title)}`
+                }
                 variant="primary"
               >
                 {piece.available ? 'Enquire to Purchase' : 'Commission Similar'}

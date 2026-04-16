@@ -23,20 +23,31 @@ const ENQUIRY_TYPES: { value: EnquiryType; label: string; hint: string }[] = [
 function EnquireForm() {
   const searchParams = useSearchParams()
   const pieceTitle = searchParams.get('piece')
+  const isBuy = searchParams.get('buy') === '1'
+  const piecePrice = searchParams.get('price')
 
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
     type: 'general',
-    message: pieceTitle ? `I'm enquiring about "${pieceTitle}".` : '',
+    message: pieceTitle
+      ? isBuy
+        ? `I'd like to purchase "${pieceTitle}"${piecePrice ? ` (€${Number(piecePrice).toLocaleString('en-IE')})` : ''}.`
+        : `I'm enquiring about "${pieceTitle}".`
+      : '',
     budget: '',
   })
 
   useEffect(() => {
     if (pieceTitle) {
-      setForm((f) => ({ ...f, message: `I'm enquiring about "${pieceTitle}".` }))
+      setForm((f) => ({
+        ...f,
+        message: isBuy
+          ? `I'd like to purchase "${pieceTitle}"${piecePrice ? ` (€${Number(piecePrice).toLocaleString('en-IE')})` : ''}.`
+          : `I'm enquiring about "${pieceTitle}".`,
+      }))
     }
-  }, [pieceTitle])
+  }, [pieceTitle, isBuy, piecePrice])
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) =>
@@ -81,20 +92,25 @@ function EnquireForm() {
     <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-6">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <p className="font-crimson italic text-ash mb-2">Get in touch</p>
-        <h1 className="section-heading mb-3">Make an Enquiry</h1>
+        <p className="font-crimson italic text-ash mb-2">
+          {isBuy ? 'Purchase enquiry' : 'Get in touch'}
+        </p>
+        <h1 className="section-heading mb-3">
+          {isBuy ? 'Enquire to Purchase' : 'Make an Enquiry'}
+        </h1>
         <div
           className="w-16 h-px mb-8"
           style={{ backgroundColor: 'var(--accent)' }}
         />
         <p className="font-crimson text-stone text-lg mb-14 leading-relaxed">
-          All commissions and purchase enquiries go through this form. Fill in
-          as much detail as you can — I&apos;ll respond within 48 hours.
+          {isBuy
+            ? `Send your details and Patrick will be in touch within 48 hours to arrange payment and delivery.`
+            : `All commissions and purchase enquiries go through this form. Fill in as much detail as you can — I\u2019ll respond within 48 hours.`}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-10">
-          {/* Enquiry type */}
-          <fieldset>
+          {/* Enquiry type — hidden for direct purchase */}
+          {!isBuy && <fieldset>
             <legend className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk mb-5 block">
               Enquiry Type
             </legend>
@@ -135,7 +151,7 @@ function EnquireForm() {
                 )
               })}
             </div>
-          </fieldset>
+          </fieldset>}
 
           {/* Name + Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -187,8 +203,8 @@ function EnquireForm() {
             </div>
           </div>
 
-          {/* Budget */}
-          <div>
+          {/* Budget — hidden when price is known */}
+          {!isBuy && <div>
             <label className="font-cinzel text-sm tracking-[0.2em] uppercase text-chalk block mb-2">
               Budget{' '}
               <span className="font-crimson italic normal-case tracking-normal text-ash text-sm">
@@ -212,7 +228,7 @@ function EnquireForm() {
                 (e.currentTarget.style.borderColor = 'var(--border)')
               }
             />
-          </div>
+          </div>}
 
           {/* Message */}
           <div>
@@ -241,7 +257,7 @@ function EnquireForm() {
 
           <div className="flex items-center gap-6">
             <Button type="submit" variant="primary" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending…' : 'Send Enquiry'}
+              {status === 'sending' ? 'Sending…' : isBuy ? 'Send Purchase Enquiry' : 'Send Enquiry'}
             </Button>
             {status === 'error' && (
               <p className="font-crimson italic text-sm" style={{ color: '#c0392b' }}>
