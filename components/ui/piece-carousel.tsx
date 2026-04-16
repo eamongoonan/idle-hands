@@ -13,7 +13,7 @@ interface Props {
 const CARD_WIDTH = 300
 const GAP = 1
 const CARD_STEP = CARD_WIDTH + GAP
-const PAUSE_MS = 3500
+const PAUSE_MS = 5500
 
 export function PieceCarousel({ pieces }: Readonly<Props>) {
   const containerRef = useRef<HTMLDivElement>(null)

@@ -15,8 +15,8 @@ interface FormState {
 }
 
 const ENQUIRY_TYPES: { value: EnquiryType; label: string; hint: string }[] = [
-  { value: '3d', label: '3D Piece', hint: 'Sculpture or 3D fabrication' },
-  { value: '2d', label: '2D Engraving', hint: 'Flat engraved or etched work' },
+  { value: '3d', label: '3D Piece', hint: 'Jewelry or Sculpture' },
+  { value: '2d', label: '2D Piece', hint: 'Flat engraved or etched work' },
   { value: 'general', label: 'General', hint: 'Question or other enquiry' },
 ]
 

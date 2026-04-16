@@ -39,10 +39,13 @@ export default function AboutPage() {
               The work is intentionally spare — every mark and every finish
               considered, the materials speaking without embellishment.
             </p>
-            <p className="font-crimson text-stone text-xl leading-relaxed mb-10">
+            <p className="font-crimson text-stone text-xl leading-relaxed mb-6">
               Commissions are accepted on a rolling basis. The enquiry process
               is straightforward: describe what you want, discuss materials and
               timeline, and the piece gets made.
+            </p>
+            <p className="font-crimson text-stone text-xl leading-relaxed mb-10">
+              Select items to enquire about further details and purchase.
             </p>
             <Button href="/enquire" variant="primary">
               Start an Enquiry
@@ -58,7 +61,7 @@ export default function AboutPage() {
               src="/profile.png"
               alt="Patrick Watts at work · Dublin"
               fill
-              className="object-cover"
+              className="object-cover grayscale"
               sizes="(min-width: 768px) 50vw, 100vw"
             />
             <div className="absolute inset-0 flex items-end p-8">
