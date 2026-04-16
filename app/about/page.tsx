@@ -48,17 +48,17 @@ export default function AboutPage() {
             </Button>
           </div>
 
-          {/* Portrait placeholder */}
+          {/* Portrait */}
           <div
-            className="relative aspect-[3/4] overflow-hidden"
+            className="piece-img-wrap relative aspect-[3/4] overflow-hidden"
             style={{ border: '1px solid var(--border)' }}
           >
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  'linear-gradient(160deg, var(--iron) 0%, var(--soot) 100%)',
-              }}
+            <Image
+              src="/profile.png"
+              alt="Patrick Watts at work · Dublin"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
             />
             <div className="absolute inset-0 flex items-end p-8">
               <p className="font-crimson italic text-ash text-sm">
