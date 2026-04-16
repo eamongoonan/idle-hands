@@ -111,13 +111,10 @@
   animation-play-state: paused;
 }
 
-.carousel-track {
-  display: flex;
-  width: max-content;
-  gap: 1px;
-  animation: marquee-scroll 60s linear infinite;
+/* Hide scrollbar on the piece carousel while keeping it scrollable */
+.carousel-scroll::-webkit-scrollbar {
+  display: none;
 }
-
-.carousel-track:hover {
-  animation-play-state: paused;
+.carousel-scroll {
+  scrollbar-width: none;
 }
