@@ -171,7 +171,7 @@ export default async function PiecePage({ params }: Props) {
                 href={
                   piece.available && piece.price
                     ? `/enquire?piece=${encodeURIComponent(piece.title)}&price=${piece.price}&buy=1`
-                    : `/enquire?piece=${encodeURIComponent(piece.title)}`
+                    : `/enquire?piece=${encodeURIComponent(piece.title)}&category=${piece.category}`
                 }
                 variant="primary"
               >

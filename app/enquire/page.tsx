@@ -25,11 +25,15 @@ function EnquireForm() {
   const pieceTitle = searchParams.get('piece')
   const isBuy = searchParams.get('buy') === '1'
   const piecePrice = searchParams.get('price')
+  const pieceCategory = searchParams.get('category')
+
+  const initialType: EnquiryType =
+    pieceCategory === '2d' ? '2d' : pieceCategory === '3d' ? '3d' : 'general'
 
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
-    type: 'general',
+    type: initialType,
     message: pieceTitle
       ? isBuy
         ? `I'd like to purchase "${pieceTitle}"${piecePrice ? ` (€${Number(piecePrice).toLocaleString('en-IE')})` : ''}.`
