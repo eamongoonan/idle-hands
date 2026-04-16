@@ -1,23 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const navLinks = [
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/shop', label: 'Available Pieces' },
-  { href: '/about', label: 'About' },
-  { href: '/enquire', label: 'Enquire' },
-]
-
 export default function Footer() {
   return (
     <footer
-      className="py-14 px-6"
+      className="py-14 px-4 sm:px-8"
       style={{
         backgroundColor: 'var(--deep)',
         borderTop: '1px solid var(--border)',
       }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between gap-10">
         {/* Brand */}
         <div>
           <div className="logo-img relative w-14 h-14 mb-3">
@@ -37,30 +30,24 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links */}
-        <nav className="flex flex-col gap-2">
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="font-crimson text-stone hover:text-chalk transition-colors duration-200 text-sm"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Note */}
-        <div>
-          <p className="font-crimson text-stone text-sm leading-relaxed">
-            All pieces are made by hand in Dublin. Commissions open year-round.
-            Response within 48 hours.
+        {/* Commission note */}
+        <div className="sm:text-right max-w-xs sm:max-w-sm">
+          <p className="font-crimson text-stone text-sm leading-relaxed mb-3">
+            All pieces are made by hand in Dublin. Commissions open year-round —
+            response within 48 hours.
           </p>
+          <Link
+            href="/enquire"
+            className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+          >
+            Make an Enquiry →
+          </Link>
         </div>
       </div>
 
+      {/* Bottom bar */}
       <div
-        className="max-w-7xl mx-auto mt-12 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2"
+        className="max-w-7xl mx-auto mt-12 pt-6 flex flex-row justify-between items-center"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <p className="font-crimson text-ash text-xs">
@@ -74,9 +61,6 @@ export default function Footer() {
         >
           @idlehandsdublin
         </a>
-        <p className="font-crimson italic text-ash text-xs">
-          Made by hand. Built with care.
-        </p>
       </div>
     </footer>
   )
