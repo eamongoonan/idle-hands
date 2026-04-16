@@ -13,8 +13,9 @@ export function PieceCard({ piece }: Readonly<PieceCardProps>) {
     : (piece.localImage ?? null)
 
   return (
-    <Link href={`/portfolio/${piece.slug.current}`} className="group block">
+    <Link href={`/portfolio/${piece.slug.current}`} className="group block h-full">
     <article
+      className="flex flex-col h-full"
       style={{ borderBottom: '1px solid var(--border)' }}
     >
       {/* Image */}
@@ -57,7 +58,7 @@ export function PieceCard({ piece }: Readonly<PieceCardProps>) {
       </div>
 
       {/* Meta */}
-      <div className="pb-7">
+      <div className="pb-7 flex-1">
         <p className="font-cinzel text-xs tracking-[0.18em] uppercase text-accent mb-1">
           {piece.category === '2d' ? '2D' : '3D'}
           {piece.material ? ` · ${piece.material}` : ''}

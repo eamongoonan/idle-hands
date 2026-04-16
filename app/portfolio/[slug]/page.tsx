@@ -145,11 +145,7 @@ export default async function PiecePage({ params }: Props) {
                     <dd className="font-crimson italic text-chalk text-sm">{piece.material}</dd>
                   </div>
                 )}
-                <div className="flex justify-between">
-                  <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Origin</dt>
-                  <dd className="font-crimson italic text-chalk text-sm">Dublin, Ireland</dd>
-                </div>
-                {piece.price && (
+{piece.price && (
                   <div className="flex justify-between">
                     <dt className="font-cinzel text-sm tracking-widest uppercase text-ash">Price</dt>
                     <dd className="font-crimson text-accent text-base">

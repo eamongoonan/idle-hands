@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import type { Piece } from '@/sanity/lib/queries'
 import { PortfolioGrid } from '@/components/ui/portfolio-grid'
 
@@ -17,6 +18,35 @@ export default function ShopFilters({ pieces }: { pieces: Piece[] }) {
 
   const filtered =
     active === 'all' ? pieces : pieces.filter((p) => p.category === active)
+
+  if (pieces.length === 0) {
+    return (
+      <div className="py-16 md:py-24 text-center">
+        <div className="w-8 h-px mx-auto mb-8" style={{ backgroundColor: 'var(--accent)' }} />
+        <p className="font-cinzel text-sm tracking-[0.2em] uppercase text-ash mb-4">
+          Nothing available right now
+        </p>
+        <p className="font-crimson text-stone text-lg leading-relaxed mb-10 max-w-sm mx-auto">
+          All current pieces are spoken for. New work is added as it&apos;s completed — or commission something made to order.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            href="/portfolio"
+            className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+          >
+            View Portfolio →
+          </Link>
+          <span className="text-stone">·</span>
+          <Link
+            href="/enquire"
+            className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+          >
+            Commission a Piece →
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -42,7 +72,21 @@ export default function ShopFilters({ pieces }: { pieces: Piece[] }) {
         })}
       </div>
 
-      <PortfolioGrid pieces={filtered} />
+      {filtered.length === 0 ? (
+        <div className="py-12 text-center">
+          <p className="font-crimson italic text-ash text-lg mb-4">
+            No available pieces in this category.
+          </p>
+          <button
+            onClick={() => setActive('all')}
+            className="font-cinzel text-sm tracking-[0.18em] uppercase text-accent hover:text-chalk transition-colors duration-200"
+          >
+            Show All →
+          </button>
+        </div>
+      ) : (
+        <PortfolioGrid pieces={filtered} />
+      )}
     </>
   )
 }
