@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${piece.title} | Idle Hands`,
       description,
-      url: `https://idle-hands-chi.vercel.app/portfolio/${slug}`,
+      url: `https://idlehands.ie/portfolio/${slug}`,
     },
   }
 }

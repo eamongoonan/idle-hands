@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Portfolio | Idle Hands',
     description:
       'The full body of work — 3D sculptural pieces and 2D engravings by Idle Hands, Dublin.',
-    url: 'https://idle-hands-chi.vercel.app/portfolio',
+    url: 'https://idlehands.ie/portfolio',
   },
 }
 

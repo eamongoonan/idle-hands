@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'About | Idle Hands',
     description:
       'About Idle Hands — metalworker based in Dublin, making bespoke jewellery and metal engravings in a family tradition of craft.',
-    url: 'https://idle-hands-chi.vercel.app/about',
+    url: 'https://idlehands.ie/about',
   },
 }
 

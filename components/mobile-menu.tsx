@@ -20,6 +20,8 @@ export default function MobileMenu() {
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        aria-controls="mobile-nav"
         className="flex flex-col justify-center items-center w-10 h-10 gap-[6px]"
       >
         <span
@@ -48,7 +50,8 @@ export default function MobileMenu() {
       {/* Dropdown */}
       {open && (
         <nav
-          className="absolute top-full left-0 right-0 flex flex-col py-6"
+          id="mobile-nav"
+          className="absolute top-full left-0 right-0 flex flex-col py-6 z-40"
           style={{
             backgroundColor: 'var(--deep)',
             borderBottom: '1px solid var(--border)',

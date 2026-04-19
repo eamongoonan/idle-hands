@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'Enquire | Idle Hands',
     description:
       'Commission a bespoke piece or enquire about available work. All commissions considered — response within 48 hours.',
-    url: 'https://idle-hands-chi.vercel.app/enquire',
+    url: 'https://idlehands.ie/enquire',
   },
 }
 

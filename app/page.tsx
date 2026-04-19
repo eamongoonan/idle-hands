@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+export const revalidate = 30
+
 export const metadata: Metadata = {
   title: 'Idle Hands | Handcrafted Metalwork · Dublin',
   description:
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Idle Hands | Handcrafted Metalwork · Dublin',
     description:
       'Bespoke jewellery and metal engravings, made entirely by hand in Dublin. Commissions welcomed — finished pieces available to buy.',
-    url: 'https://idle-hands-chi.vercel.app',
+    url: 'https://idlehands.ie',
   },
 }
 import Marquee from '@/components/marquee'

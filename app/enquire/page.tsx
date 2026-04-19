@@ -275,9 +275,25 @@ function EnquireForm() {
   )
 }
 
+function EnquireFormFallback() {
+  return (
+    <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-6">
+      <div className="max-w-2xl mx-auto">
+        <div className="w-16 h-px mb-8" style={{ backgroundColor: 'var(--accent)' }} />
+        <div className="h-8 w-48 mb-10" style={{ backgroundColor: 'var(--border)' }} />
+        <div className="space-y-6">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="h-12 w-full" style={{ backgroundColor: 'var(--border)' }} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function EnquirePage() {
   return (
-    <Suspense>
+    <Suspense fallback={<EnquireFormFallback />}>
       <EnquireForm />
     </Suspense>
   )

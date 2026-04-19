@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
 const LIMIT = 5
 const WINDOW_MS = 15 * 60 * 1000
@@ -39,7 +50,10 @@ function typeLabel(type: string | undefined) {
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
   if (isRateLimited(ip)) {
-    return NextResponse.json({ error: 'Too many requests.' }, { status: 429 })
+    return NextResponse.json({ error: 'Too many requests.' }, {
+      status: 429,
+      headers: { 'Retry-After': '900' },
+    })
   }
 
   const apiKey = process.env.RESEND_API_KEY
@@ -65,14 +79,23 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
   }
 
+  if (!EMAIL_RE.test(email.trim())) {
+    return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 })
+  }
+
+  const safeName = escapeHtml(name.trim())
+  const safeEmail = escapeHtml(email.trim())
+  const safeMessage = escapeHtml(message.trim())
+  const safeBudget = budget ? escapeHtml(budget.trim()) : null
+
   const resend = new Resend(apiKey)
-  const subject = `[Idle Hands] ${typeLabel(type)} enquiry from ${name}`
+  const subject = `[Idle Hands] ${typeLabel(type)} enquiry from ${safeName}`
 
   try {
     await resend.emails.send({
       from: 'Idle Hands <noreply@idlehands.ie>',
       to: contactEmail,
-      replyTo: email,
+      replyTo: email.trim(),
       subject,
       html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
@@ -88,19 +111,19 @@ export async function POST(req: NextRequest) {
             </tr>
             <tr>
               <td style="padding: 0.5rem 0; color: #666; vertical-align: top;">Name</td>
-              <td style="padding: 0.5rem 0; color: #111;">${name}</td>
+              <td style="padding: 0.5rem 0; color: #111;">${safeName}</td>
             </tr>
             <tr>
               <td style="padding: 0.5rem 0; color: #666; vertical-align: top;">Email</td>
               <td style="padding: 0.5rem 0;">
-                <a href="mailto:${email}" style="color: #b5651d;">${email}</a>
+                <a href="mailto:${safeEmail}" style="color: #b5651d;">${safeEmail}</a>
               </td>
             </tr>
             ${
-              budget
+              safeBudget
                 ? `<tr>
               <td style="padding: 0.5rem 0; color: #666; vertical-align: top;">Budget</td>
-              <td style="padding: 0.5rem 0; color: #111;">${budget}</td>
+              <td style="padding: 0.5rem 0; color: #111;">${safeBudget}</td>
             </tr>`
                 : ''
             }
@@ -109,7 +132,7 @@ export async function POST(req: NextRequest) {
             <h3 style="font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #666; margin: 0 0 0.75rem;">
               Message
             </h3>
-            <p style="white-space: pre-wrap; color: #222; margin: 0;">${message}</p>
+            <p style="white-space: pre-wrap; color: #222; margin: 0;">${safeMessage}</p>
           </div>
         </div>
       `,
@@ -118,7 +141,7 @@ export async function POST(req: NextRequest) {
     // Confirmation email to the customer — fire and forget, don't fail the request if it errors
     resend.emails.send({
       from: 'Idle Hands <noreply@idlehands.ie>',
-      to: email,
+      to: email.trim(),
       subject: 'Your enquiry has been received — Idle Hands',
       html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
@@ -127,7 +150,7 @@ export async function POST(req: NextRequest) {
               Idle Hands
             </h2>
           </div>
-          <p style="margin: 0 0 1rem;">Hi ${name},</p>
+          <p style="margin: 0 0 1rem;">Hi ${safeName},</p>
           <p style="margin: 0 0 1rem;">
             Thank you for getting in touch. Your enquiry has been received and Patrick will be in touch within 48 hours.
           </p>
