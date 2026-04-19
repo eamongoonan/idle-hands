@@ -3,6 +3,8 @@ import { getAllPieces } from '@/sanity/lib/queries'
 import { STATIC_PIECES } from '@/lib/static-pieces'
 import PortfolioTabs from './portfolio-tabs'
 
+export const revalidate = 30
+
 export const metadata: Metadata = {
   title: 'Portfolio',
   description:

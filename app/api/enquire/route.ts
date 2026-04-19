@@ -1,6 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
+const rateLimit = new Map<string, { count: number; resetAt: number }>()
+const LIMIT = 5
+const WINDOW_MS = 15 * 60 * 1000
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateLimit.get(ip)
+  if (!entry || now > entry.resetAt) {
+    rateLimit.set(ip, { count: 1, resetAt: now + WINDOW_MS })
+    return false
+  }
+  if (entry.count >= LIMIT) return true
+  entry.count++
+  return false
+}
+
 interface EnquiryBody {
   name?: string
   email?: string
@@ -21,6 +37,11 @@ function typeLabel(type: string | undefined) {
 }
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: 'Too many requests.' }, { status: 429 })
+  }
+
   const apiKey = process.env.RESEND_API_KEY
   const contactEmail = process.env.CONTACT_EMAIL
 

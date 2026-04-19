@@ -3,6 +3,8 @@ import { getAvailablePieces } from '@/sanity/lib/queries'
 import { STATIC_AVAILABLE } from '@/lib/static-pieces'
 import ShopFilters from './shop-filters'
 
+export const revalidate = 30
+
 export const metadata: Metadata = {
   title: 'Available Pieces',
   description:

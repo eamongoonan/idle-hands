@@ -62,7 +62,7 @@ The dev server starts without them — Sanity pages show static fallback data, t
 
 Sanity Studio is embedded at `/studio`. The `piece` document type fields: `title`, `slug`, `category` (`"2d"` | `"3d"`), `material`, `size` (3D only, conditionally shown), `dimensions` (2D only, conditionally shown), `price`, `available`, `mainImage` (hotspot), `description`.
 
-After adding new schema fields, redeploy the Studio schema (`sanity deploy` or via the Studio UI).
+The Studio is embedded in the Next.js app — no separate `sanity deploy` needed. Schema changes take effect when the Next.js app is deployed.
 
 ## Known issues / open decisions
 

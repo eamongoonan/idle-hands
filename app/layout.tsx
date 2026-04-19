@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import './globals.css'
 import { cinzel, crimsonPro } from '@/lib/fonts'
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import CookieBanner from '@/components/cookie-banner'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://idle-hands-chi.vercel.app'),
@@ -37,17 +37,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
-        {gaId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}')`}
-            </Script>
-          </>
-        )}
+        {gaId && <CookieBanner gaId={gaId} />}
       </body>
     </html>
   )
