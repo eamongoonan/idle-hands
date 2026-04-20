@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!piece) return {}
   const description = piece.description ?? `${piece.title} — handcrafted metalwork by Idle Hands, Dublin.`
+  const ogImage = piece.mainImage
+    ? urlFor(piece.mainImage).width(1200).height(630).url()
+    : (piece.localImage ?? undefined)
   return {
     title: piece.title,
     description,
@@ -27,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${piece.title} | Idle Hands`,
       description,
       url: `https://idlehands.ie/portfolio/${slug}`,
+      ...(ogImage && { images: [{ url: ogImage, width: 1200, height: 630 }] }),
     },
   }
 }
@@ -45,8 +49,31 @@ export default async function PiecePage({ params }: Props) {
 
   const categoryLabel = piece.category === '2d' ? '2D Piece' : '3D Piece'
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: piece.title,
+    ...(piece.description && { description: piece.description }),
+    ...(imageUrl && { image: imageUrl }),
+    brand: { '@type': 'Brand', name: 'Idle Hands' },
+    ...(piece.price && {
+      offers: {
+        '@type': 'Offer',
+        price: piece.price,
+        priceCurrency: 'EUR',
+        availability: piece.available
+          ? 'https://schema.org/InStock'
+          : 'https://schema.org/SoldOut',
+      },
+    }),
+  }
+
   return (
     <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-28 px-4 sm:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-7xl mx-auto">
 
         {/* Back link */}

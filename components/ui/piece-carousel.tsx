@@ -49,6 +49,7 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
   if (pieces.length === 0) return null
 
   return (
+    <div className="carousel-fade-wrap">
     <div
       ref={containerRef}
       onMouseEnter={stop}
@@ -126,6 +127,7 @@ export function PieceCarousel({ pieces }: Readonly<Props>) {
           </Link>
         )
       })}
+    </div>
     </div>
   )
 }

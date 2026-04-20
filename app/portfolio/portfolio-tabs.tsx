@@ -22,12 +22,16 @@ export default function PortfolioTabs({ pieces }: { pieces: Piece[] }) {
     <>
       {/* Tab bar */}
       <div
+        role="tablist"
+        aria-label="Filter work by category"
         className="flex gap-0 mb-14 overflow-x-auto"
         style={{ borderBottom: '1px solid var(--border)' }}
       >
         {TABS.map((tab) => (
           <button
             key={tab.value}
+            role="tab"
+            aria-selected={active === tab.value}
             onClick={() => setActive(tab.value)}
             className="font-cinzel text-sm tracking-[0.2em] uppercase px-6 py-3.5 shrink-0 whitespace-nowrap transition-colors duration-200"
             style={{

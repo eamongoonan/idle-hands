@@ -51,12 +51,13 @@ export default function ShopFilters({ pieces }: { pieces: Piece[] }) {
   return (
     <>
       {/* Filter chips */}
-      <div className="flex flex-wrap gap-2 mb-12">
+      <div role="group" aria-label="Filter by category" className="flex flex-wrap gap-2 mb-12">
         {FILTERS.map((f) => {
           const isActive = active === f.value
           return (
             <button
               key={f.value}
+              aria-pressed={isActive}
               onClick={() => setActive(f.value)}
               className="font-cinzel text-sm tracking-[0.18em] uppercase px-5 py-2.5 transition-all duration-200"
               style={{

@@ -52,7 +52,7 @@ function EnquireForm() {
       }))
     }
   }, [pieceTitle, isBuy, piecePrice])
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error' | 'ratelimit'>('idle')
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) =>
     setForm((f) => ({ ...f, [key]: value }))
@@ -66,7 +66,9 @@ function EnquireForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-      setStatus(res.ok ? 'sent' : 'error')
+      if (res.ok) setStatus('sent')
+      else if (res.status === 429) setStatus('ratelimit')
+      else setStatus('error')
     } catch {
       setStatus('error')
     }
@@ -84,9 +86,10 @@ function EnquireForm() {
             Thank you
           </p>
           <h1 className="section-heading mb-6">Enquiry Received</h1>
-          <p className="font-crimson text-stone text-lg">
+          <p className="font-crimson text-stone text-lg mb-8">
             I&apos;ll be in touch within 48 hours.
           </p>
+          <Button href="/portfolio" variant="ghost">View All Work →</Button>
         </div>
       </div>
     )
@@ -266,6 +269,11 @@ function EnquireForm() {
             {status === 'error' && (
               <p className="font-crimson italic text-sm" style={{ color: '#c0392b' }}>
                 Something went wrong. Please try again.
+              </p>
+            )}
+            {status === 'ratelimit' && (
+              <p className="font-crimson italic text-sm" style={{ color: '#c0392b' }}>
+                Too many requests. Please wait a few minutes and try again.
               </p>
             )}
           </div>
