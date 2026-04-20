@@ -1,6 +1,6 @@
 # Idle Hands
 
-Website for **Idle Hands** — bespoke handcrafted metalwork by Paddy, based in Dublin. The site showcases 2D engravings and 3D sculptural pieces, handles commission enquiries, and lists available pieces for purchase.
+A production-ready website built for Idle Hands, a Dublin-based metalwork studio. The site showcases 2D engravings and 3D sculptural pieces, supports commission enquiries, and integrates a headless CMS for content management.
 
 ---
 
