@@ -67,14 +67,9 @@
     color: var(--chalk);
   }
 
-  /* Portfolio / piece images — slight dimming at rest, full colour on hover */
+  /* Portfolio / piece images — hover lift only, full colour always */
   .piece-img-wrap img {
-    filter: brightness(0.82);
-    transition: filter 0.5s ease, transform 0.5s ease;
-  }
-
-  .piece-img-wrap:hover img {
-    filter: brightness(1);
+    transition: transform 0.5s ease;
   }
 
   /* Logo image — transparent PNG, no filter needed */
