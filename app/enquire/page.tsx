@@ -269,6 +269,9 @@ function EnquireForm() {
               </p>
             )}
           </div>
+          <p className="font-crimson italic text-ash text-sm">
+            Your details are used only to respond to your enquiry and are not shared with third parties.
+          </p>
         </form>
       </div>
     </div>

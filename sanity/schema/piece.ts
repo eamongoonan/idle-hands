@@ -78,6 +78,8 @@ const piece = {
       title: 'Description',
       type: 'text',
       rows: 4,
+      validation: (Rule: { min: (n: number) => { warning: (msg: string) => unknown } }) =>
+        Rule.min(20).warning('Add at least a short description — it shows on the piece page.'),
     },
   ],
   preview: {
