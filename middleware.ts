@@ -10,7 +10,10 @@ export function middleware(req: NextRequest) {
   if (auth) {
     const [scheme, encoded] = auth.split(' ')
     if (scheme === 'Basic' && encoded) {
-      const [u, p] = Buffer.from(encoded, 'base64').toString().split(':')
+      const decoded = Buffer.from(encoded, 'base64').toString()
+      const colon = decoded.indexOf(':')
+      const u = decoded.slice(0, colon)
+      const p = decoded.slice(colon + 1)
       if (u === user && p === pass) return NextResponse.next()
     }
   }
